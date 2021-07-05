@@ -165,7 +165,6 @@ public class ChaosAwaken
     public static Item aluminum_ingot;
     public static Item critter_creeper;
     public static Item critter;
-    public static int RoyalGlideEnable = 1;
     public static Item amethysthelmet;
     public static Item amethystchestplate;
     public static Item amethystleggings;
