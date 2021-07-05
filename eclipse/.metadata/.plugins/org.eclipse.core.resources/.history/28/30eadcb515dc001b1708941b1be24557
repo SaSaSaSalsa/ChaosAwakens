@@ -1,0 +1,44 @@
+package Me.Akio.ChaosAwakens.Entities;
+
+import Me.Akio.ChaosAwakens.ChaosAwaken;
+import Me.Akio.ChaosAwakens.util.GenericTargetSorter;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityAgeable;
+import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.EntityAIFollowParent;
+import net.minecraft.entity.ai.EntityAIPanic;
+import net.minecraft.entity.ai.EntityAITempt;
+import net.minecraft.entity.ai.EntityAIWander;
+import net.minecraft.entity.monster.EntityMob;
+import net.minecraft.init.Items;
+import net.minecraft.util.ChunkCoordinates;
+import net.minecraft.world.World;
+
+public class Bee extends EntityMob{
+
+	public Bee(World world) {
+		super(world);
+		setSize(1,2);
+		preventEntitySpawning = true;
+		this.tasks.addTask(0, new EntityAIWander(this,0.5D));
+		this.tasks.addTask(1, new EntityAIPanic(this, 1.0D));
+		this.tasks.addTask(2, new EntityAITempt(this, 1.0D, Items.iron_ingot, false));
+		this.tasks.addTask(3, new EntityAIFollowParent(this, 1.1D));
+
+	}
+	
+	public Bee(World world, double x, double y, double z) {
+		this(world);
+		setPosition(x,y,z);
+		
+	}
+
+	public boolean isAiEnabled() {
+		return true;
+	}
+
+	@Override
+	public EntityAgeable createChild(EntityAgeable entity) {
+		return new Bee(worldObj);
+	}
+}

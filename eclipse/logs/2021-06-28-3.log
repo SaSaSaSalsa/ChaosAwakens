@@ -1,0 +1,28 @@
+[13:45:22] [main/INFO]: Setting user: Player98
+[13:45:23] [Client thread/INFO]: LWJGL Version: 2.9.1
+[13:45:28] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Chaos Awakens
+[13:45:28] [Sound Library Loader/INFO]: Sound engine started
+[13:45:29] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[13:45:29] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[13:45:29] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Chaos Awakens
+[13:45:29] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[13:45:30] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[13:45:30] [Sound Library Loader/INFO]: Sound engine started
+[13:45:46] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[13:45:46] [Server thread/INFO]: Generating keypair
+[13:45:46] [Server thread/INFO]: Preparing start region for level 0
+[13:45:47] [Server thread/INFO]: Changing view distance to 12, from 10
+[13:45:47] [Server thread/INFO]: Player98[local:E:aa6d6231] logged in with entity id 193 at (-137.146438424564, 62.34179939379429, -234.85864708468026)
+[13:45:47] [Server thread/INFO]: Player98 joined the game
+[13:45:51] [Client thread/INFO]: [CHAT] MinecartChest, EyeOfEnderSignal, ItemFrame, MinecartCommandBlock, Item, EntityHorse, Fireball, EnderDragon, MinecartTNT, Villager, ThrownPotion, SnowMan, LeashKnot, Arrow, MushroomCow, LavaSlime, Zombie, MinecartSpawner, EnderCrystal, Snowball, Enderman, CaveSpider, MinecartHopper, XPOrb, ThrownExpBottle, FireworksRocketEntity, Chicken, FallingSand, GoldenAppleCow, Giant, VillagerGolem, PrimedTnt, Creeper, ThrownEnderpearl, Silverfish, Squid, AppleCow, Monster, Skeleton, SmallFireball, MinecartRideable, Wolf, Witch, Mob, Ozelot, EnchantedGoldenAppleCow, Cow, Slime, Painting, Pig, MinecartFurnace, Bat, Blaze, WitherBoss, PigZombie, Spider, Ghast, Sheep, WitherSkull, Boat
+[13:45:54] [Client thread/INFO]: [CHAT] PrimedTnt, Painting, Pig, PigZombie
+[13:45:57] [Client thread/INFO]: [CHAT] Arrow, AppleCow
+[13:45:58] [Client thread/INFO]: [CHAT] Arrow, AppleCow
+[13:45:58] [Server thread/INFO]: [Player98: Object successfully summoned]
+[13:45:58] [Client thread/INFO]: [CHAT] Object successfully summoned
+[13:46:17] [Server thread/INFO]: [Player98: Object successfully summoned]
+[13:46:17] [Client thread/INFO]: [CHAT] Object successfully summoned
+[13:46:28] [Server thread/INFO]: Saving and pausing game...
+[13:46:28] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[13:46:28] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[13:46:28] [Server thread/INFO]: Saving chunks for level 'New World'/The End

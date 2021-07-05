@@ -1,0 +1,26 @@
+package Me.Akio.ChaosAwakens.tools;
+
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.world.World;
+
+public class BerthaHit {
+
+	public double motionX;
+	public double motionY;
+	public double motionZ;
+
+	public BerthaHit(World worldObj, EntityLivingBase p) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public void setLocationAndAngles(double d, double e, double f, float rotationYawHead, float rotationPitch) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setHitType(int i) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,0 +1,7 @@
+package Me.Akio.Chaos.Awakens.tools;
+
+import net.minecraft.item.Item;
+
+public class Aluminum_Ingot extends Item{
+
+}

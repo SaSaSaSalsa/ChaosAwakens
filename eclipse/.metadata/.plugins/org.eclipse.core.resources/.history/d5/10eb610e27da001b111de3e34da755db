@@ -1,0 +1,25 @@
+package Me.Akio.Chaos.Awakens.CreativeTabs;
+
+import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+
+public class ToolsTab extends CreativeTabs{
+
+
+    public ToolsTab(int p_i1853_1_, String p_i1853_2_) {
+		super(p_i1853_1_, p_i1853_2_);
+	}
+	protected static final Block Amethyst = null;
+	public static CreativeTabs ChaosTab = new CreativeTabs("Chaos_Awakens:Tools") {
+    	@Override
+    	public Item getTabIconItem() {
+    		return new ItemStack(Amethyst).getItem();
+    	}
+    };
+	@Override
+	public Item getTabIconItem() {
+		return null;
+	}
+}

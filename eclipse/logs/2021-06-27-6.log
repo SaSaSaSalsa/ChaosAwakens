@@ -1,0 +1,28 @@
+[00:55:22] [main/INFO]: Setting user: Player869
+[00:55:23] [Client thread/INFO]: LWJGL Version: 2.9.1
+[00:55:28] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Chaos Awakens
+[00:55:28] [Sound Library Loader/INFO]: Sound engine started
+[00:55:29] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[00:55:29] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[00:55:29] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Chaos Awakens
+[00:55:29] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[00:55:29] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[00:55:30] [Sound Library Loader/INFO]: Sound engine started
+[00:55:34] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[00:55:34] [Server thread/INFO]: Generating keypair
+[00:55:34] [Server thread/INFO]: Preparing start region for level 0
+[00:55:35] [Server thread/INFO]: Changing view distance to 12, from 10
+[00:55:35] [Server thread/INFO]: Player869[local:E:3612ee5d] logged in with entity id 233 at (-274.1051629299194, 74.0, -135.1456546129847)
+[00:55:35] [Server thread/INFO]: Player869 joined the game
+[00:55:38] [Client thread/INFO]: [CHAT] Saved screenshot as 2021-06-27_00.55.38.png
+[00:55:38] [Server thread/INFO]: Player869 has just earned the achievement [Taking Inventory]
+[00:55:38] [Client thread/INFO]: [CHAT] Player869 has just earned the achievement [Taking Inventory]
+[00:55:42] [Client thread/INFO]: [CHAT] Saved screenshot as 2021-06-27_00.55.42.png
+[00:55:43] [Client thread/INFO]: [CHAT] Saved screenshot as 2021-06-27_00.55.43.png
+[00:55:44] [Client thread/INFO]: [CHAT] Saved screenshot as 2021-06-27_00.55.44.png
+[00:55:46] [Client thread/INFO]: [CHAT] Saved screenshot as 2021-06-27_00.55.46.png
+[00:55:59] [Client thread/INFO]: [CHAT] Saved screenshot as 2021-06-27_00.55.59.png
+[00:56:00] [Server thread/INFO]: Saving and pausing game...
+[00:56:00] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[00:56:00] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[00:56:00] [Server thread/INFO]: Saving chunks for level 'New World'/The End

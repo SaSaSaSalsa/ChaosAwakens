@@ -1,0 +1,16 @@
+package Me.Akio.Chaos.Awakens.tools;
+
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemAxe;
+import net.minecraft.item.Item.ToolMaterial;
+
+public class Emerald_Axe extends ItemAxe{
+	   private static final CreativeTabs ChaosTab = null;
+
+	public Emerald_Axe(ToolMaterial material) {
+		    super(material);
+		     this.maxStackSize = 1;
+		     setMaxDamage(1300);
+		     setCreativeTab(ChaosTab);
+		   }
+}

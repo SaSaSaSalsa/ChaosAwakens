@@ -1,0 +1,7 @@
+package Me.Akio.ChaosAwakens.materials;
+
+import net.minecraft.item.Item;
+
+public class Titanium_Ingot extends Item{
+
+}

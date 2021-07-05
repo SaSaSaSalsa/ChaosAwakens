@@ -1,0 +1,7 @@
+package Me.Akio.Chaos.Awakens.materials;
+
+import net.minecraft.item.Item;
+
+public class Critter_Creeper extends Item{
+
+}

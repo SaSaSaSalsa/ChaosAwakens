@@ -1,0 +1,73 @@
+package Me.Akio.ChaosAwakens.Entities;
+
+import Me.Akio.ChaosAwakens.ChaosAwaken;
+import Me.Akio.ChaosAwakens.util.GenericTargetSorter;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.monster.EntityMob;
+import net.minecraft.util.ChunkCoordinates;
+import net.minecraft.world.World;
+
+public class Bee extends EntityMob{
+
+	/*  58 */   private ChunkCoordinates currentFlightTarget = null;
+	/*  59 */   private GenericTargetSorter TargetSorter = null;
+	/*  60 */   private int stuck_count = 0;
+	/*  61 */   private int lastX = 0;
+	/*  62 */   private int lastZ = 0;
+	/*  63 */   private Entity rt = null;
+	/*     */   
+	/*     */   public Bee(World par1World) {
+	/*  66 */     super(par1World);
+	/*  67 */     setSize(1.5F, 2.5F);
+	/*  68 */     getNavigator().setAvoidsWater(false);
+	/*  69 */     this.experienceValue = 25;
+	/*  70 */     this.isImmuneToFire = false;
+	/*  71 */     this.fireResistance = 5;
+	/*  72 */     this.TargetSorter = new GenericTargetSorter((Entity)this);
+	/*     */   }
+	/*     */ 
+	/*     */ 
+	/*     */   
+	/*     */   protected void applyEntityAttributes() {
+	/*  78 */     super.applyEntityAttributes();
+	/*  79 */     getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(mygetMaxHealth());
+	/*  80 */     getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.3199999928474426D);
+	/*     */     
+	/*  82 */     getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(ChaosAwaken.Bee_stats.attack);
+	/*     */   }
+	/*     */ 
+	/*     */ 
+	/*     */   
+	/*     */   protected void entityInit() {
+	/*  88 */     super.entityInit();
+	/*  89 */     this.dataWatcher.addObject(20, Byte.valueOf((byte)0));
+	/*     */   }
+	/*     */   
+	/*     */   protected boolean canDespawn() {
+	/*  93 */     if (isNoDespawnRequired()) return false; 
+	/*  94 */     return true;
+	/*     */   }
+	/*     */ 
+	/*     */   
+	/*     */   public final int getAttacking() {
+	/*  99 */     return this.dataWatcher.getWatchableObjectByte(20);
+	/*     */   }
+	/*     */ 
+	/*     */   
+	/*     */   public final void setAttacking(int par1) {
+	/* 104 */     this.dataWatcher.updateObject(20, Byte.valueOf((byte)par1));
+	/*     */   }
+	/*     */ 
+	/*     */ 
+	/*     */ 
+	/*     */   
+	/*     */   protected float getSoundVolume() {
+	/* 111 */     return 0.25F;
+	/*     */   }
+
+	/*     */   public int mygetMaxHealth() {
+		/* 153 */     return ChaosAwaken.Bee_stats.health;
+		/*     */   }
+
+}

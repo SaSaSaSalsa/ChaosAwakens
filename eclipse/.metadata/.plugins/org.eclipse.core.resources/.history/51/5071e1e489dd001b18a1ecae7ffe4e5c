@@ -1,0 +1,11 @@
+package Me.Akio.ChaosAwakens.Armors;
+
+import net.minecraft.item.ItemArmor.ArmorMaterial;
+
+public class CatEye_Helmet {
+
+	public CatEye_Helmet(ArmorMaterial tigereyehelmet, int i, int j) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

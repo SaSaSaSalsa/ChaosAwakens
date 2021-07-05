@@ -1,0 +1,58 @@
+package Me.Akio.ChaosAwakens.tools;
+
+/*     */ import net.minecraft.entity.Entity;
+/*     */ import net.minecraft.entity.EntityLivingBase;
+/*     */ import net.minecraft.entity.passive.EntityTameable;
+/*     */ import net.minecraft.entity.player.EntityPlayer;
+/*     */ import net.minecraft.entity.projectile.EntityThrowable;
+/*     */ import net.minecraft.util.DamageSource;
+/*     */ import net.minecraft.util.MathHelper;
+/*     */ import net.minecraft.util.MovingObjectPosition;
+/*     */ import net.minecraft.world.World;
+/*     */ 
+/*     */ 
+/*     */ public class BerthaHit
+/*     */   extends EntityThrowable
+/*     */ {
+/*  17 */   private int hit_type = 0;
+/*     */ 
+/*     */   
+/*     */   public BerthaHit(World par1World) {
+/*  21 */     super(par1World);
+/*     */   }
+/*     */ 
+/*     */   
+/*     */   public BerthaHit(World par1World, int par2) {
+/*  26 */     super(par1World);
+/*     */   }
+/*     */ 
+/*     */   
+/*     */   public BerthaHit(World par1World, EntityLivingBase par2EntityLiving) {
+/*  31 */     super(par1World, par2EntityLiving);
+/*     */     
+/*  33 */     setSize(0.33F, 0.33F);
+/*  34 */     setLocationAndAngles(par2EntityLiving.posX, par2EntityLiving.posY + par2EntityLiving.getEyeHeight(), par2EntityLiving.posZ, par2EntityLiving.rotationYaw, par2EntityLiving.rotationPitch);
+/*  35 */     this.posX -= (MathHelper.cos(this.rotationYaw / 180.0F * 3.1415927F) * 0.16F);
+/*  36 */     this.posY -= 0.1D;
+/*  37 */     this.posZ -= (MathHelper.sin(this.rotationYaw / 180.0F * 3.1415927F) * 0.16F);
+/*  38 */     setPosition(this.posX, this.posY, this.posZ);
+/*  39 */     this.yOffset = 0.0F;
+/*  40 */     float f = 0.4F;
+/*  41 */     this.motionX = (-MathHelper.sin(this.rotationYaw / 180.0F * 3.1415927F) * MathHelper.cos(this.rotationPitch / 180.0F * 3.1415927F) * f);
+/*  42 */     this.motionZ = (MathHelper.cos(this.rotationYaw / 180.0F * 3.1415927F) * MathHelper.cos(this.rotationPitch / 180.0F * 3.1415927F) * f);
+/*  43 */     this.motionY = (-MathHelper.sin((this.rotationPitch + func_70183_g()) / 180.0F * 3.1415927F) * f);
+/*  44 */     setThrowableHeading(this.motionX, this.motionY, this.motionZ, func_70182_d(), 0.1F);
+/*     */   }
+/*     */ 
+/*     */   
+/*     */   public BerthaHit(World par1World, EntityLivingBase par2EntityLiving, int par3) {
+/*  49 */     super(par1World, par2EntityLiving);
+/*     */   }
+@Override
+protected void onImpact(MovingObjectPosition p_70184_1_) {
+}
+public void setHitType(int i) {
+	// TODO Auto-generated method stub
+	
+}	
+}

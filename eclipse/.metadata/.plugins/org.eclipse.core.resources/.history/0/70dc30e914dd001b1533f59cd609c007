@@ -1,0 +1,11 @@
+package Me.Akio.ChaosAwakens.Foods;
+
+import net.minecraft.item.ItemFood;
+
+public class Cooked_Bacon extends ItemFood{
+
+	public Cooked_Bacon(int p_i45339_1_, float p_i45339_2_, double d, boolean p_i45339_3_) {
+		super(p_i45339_1_, p_i45339_2_, p_i45339_3_);
+	}
+
+}

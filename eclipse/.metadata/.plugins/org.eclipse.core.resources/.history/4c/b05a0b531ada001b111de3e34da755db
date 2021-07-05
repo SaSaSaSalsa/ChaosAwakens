@@ -1,0 +1,102 @@
+package Me.Akio.Chaos.Awakens;
+
+import net.minecraftforge.common.util.EnumHelper;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import Me.Akio.Chaos.Awakens.Entities.Enchanted_Cow;
+import Me.Akio.Chaos.Awakens.Entities.Golden_Cow;
+import Me.Akio.Chaos.Awakens.Entities.Red_Cow;
+import Me.Akio.Chaos.Awakens.materials.Amethyst;
+import Me.Akio.Chaos.Awakens.materials.Ruby;
+import Me.Akio.Chaos.Awakens.tools.Aluminum;
+import Me.Akio.Chaos.Awakens.tools.Amethyst_Axe;
+import Me.Akio.Chaos.Awakens.tools.Emerald_Axe;
+import Me.Akio.Chaos.Awakens.tools.Emerald_Pickaxe;
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.EntityRegistry;
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
+
+@Mod(modid = ChaosAwaken.MODID, name = ChaosAwaken.CName, version = ChaosAwaken.VERSION)
+public class ChaosAwaken
+{
+    public static final String MODID = "ChaosAwakens";
+    public static final String CName = "Chaos Awakens";
+    public static final String VERSION = "0.1";
+ 
+    public static final Item.ToolMaterial EmeraldPickaxe = EnumHelper.addToolMaterial("EmeraldPickaxe", 3, 1300, 10F, 6F, 75);
+    public static final Item.ToolMaterial EmeraldAxe = EnumHelper.addToolMaterial("EmeraldAxe", 3, 1300, 10F, 6F, 75);
+    public static final Item.ToolMaterial AmethystAxe = EnumHelper.addToolMaterial("AmethystPickaxe", 3, 1300, 10F, 6F, 75);
+
+    public static Item amethyst;
+    public static Item amethyst_axe;
+    public static Item emerald_pickaxe;
+    public static Item emerald_axe;
+    public static Item ruby;
+    public static Item aluminum;
+    
+    public static int RedCowID = 0;
+    public static int GoldCowID = 0;
+    public static int EnchantedCowID = 0;
+    
+    @EventHandler
+    public void preInit(FMLPreInitializationEvent event) {
+    	
+    	//Metals
+    	
+    	ruby = new Ruby().setUnlocalizedName("Ruby").setTextureName("chaosawakens:ruby");
+    	GameRegistry.registerItem(ruby, ruby.getUnlocalizedName().substring(5));
+    	
+    	amethyst = new Amethyst().setUnlocalizedName("Amethyst").setTextureName("chaosawakens:amethyst");
+    	GameRegistry.registerItem(amethyst, amethyst.getUnlocalizedName().substring(5));
+    	
+    	aluminum = new Aluminum().setUnlocalizedName("Aluminum").setTextureName("chaosawakens:aluminum");
+    	GameRegistry.registerItem(aluminum, aluminum.getUnlocalizedName().substring(5));
+    	
+    	//Tools
+    	
+    	amethyst_axe = new Amethyst_Axe(AmethystAxe).setUnlocalizedName("Amethyst_Axe").setTextureName("chaosawakens:amethyst_axe");
+    	GameRegistry.registerItem(amethyst_axe, amethyst_axe.getUnlocalizedName().substring(5)); 
+    	
+    	emerald_axe = new Emerald_Axe(EmeraldAxe).setUnlocalizedName("Emerald_Axe").setTextureName("chaosawakens:emerald_axe");
+    	GameRegistry.registerItem(emerald_axe, emerald_axe.getUnlocalizedName().substring(5)); 
+
+    	emerald_pickaxe = new Emerald_Pickaxe(EmeraldPickaxe).setUnlocalizedName("Emerald_Pickaxe").setTextureName("chaosawakens:emerald_pickaxe");
+    	GameRegistry.registerItem(emerald_pickaxe, emerald_pickaxe.getUnlocalizedName().substring(5)); 
+    	
+
+    }
+    @EventHandler
+    public void init(FMLInitializationEvent event) {
+    	
+    	GameRegistry.addRecipe(new ItemStack(emerald_pickaxe), "DDD", " S ", " S ", 'D', Items.emerald, 'S', Items.stick);
+    	
+    	GameRegistry.addRecipe(new ItemStack(amethyst_axe), "AAA", " S ", " S ", 'A', ChaosAwaken.amethyst, 'S', Items.stick);
+    	
+    	GameRegistry.addRecipe(new ItemStack(emerald_axe), "EE ", "ES ", " S ", 'E', Items.emerald, 'S', Items.stick);
+    	
+    			EntityRegistry.instance(); RedCowID = EntityRegistry.findGlobalUniqueEntityId();
+    	       EntityRegistry.instance(); EntityRegistry.registerGlobalEntityID(Red_Cow.class, "AppleCow", RedCowID);
+    	       LanguageRegistry.instance().addStringLocalization("AppleCow", "en_US", "AppleCow");
+    	       LanguageRegistry.instance().addStringLocalization("entity.Apple Cow.name", "en_US", "AppleCow");
+    	       EntityRegistry.instance(); EntityRegistry.registerModEntity(Red_Cow.class, "AppleCow", RedCowID, this, 64, 1, false);
+    	           
+    	       EntityRegistry.instance(); GoldCowID = EntityRegistry.findGlobalUniqueEntityId();
+    	       EntityRegistry.instance(); EntityRegistry.registerGlobalEntityID(Golden_Cow.class, "GoldenAppleCow", GoldCowID);
+    	       LanguageRegistry.instance().addStringLocalization("Golden Apple Cow", "en_US", "Golden Apple Cow");
+    	       LanguageRegistry.instance().addStringLocalization("entity.Golden Apple Cow.name", "en_US", "Golden Apple Cow");
+    	       EntityRegistry.instance(); EntityRegistry.registerModEntity(Golden_Cow.class, "GoldenAppleCow", GoldCowID, this, 64, 1, false);
+    	           
+    	       EntityRegistry.instance(); EnchantedCowID = EntityRegistry.findGlobalUniqueEntityId();
+    	       EntityRegistry.instance(); EntityRegistry.registerGlobalEntityID(Enchanted_Cow.class, "EnchantedGoldenAppleCow", EnchantedCowID);
+    	       LanguageRegistry.instance().addStringLocalization("EnchantedGoldenAppleCow", "en_US", "EnchantedGoldenAppleCow");
+    	       LanguageRegistry.instance().addStringLocalization("entity.Enchanted Golden Apple Cow.name", "en_US", "Enchanted Golden Apple Cow");
+    	       EntityRegistry.instance(); EntityRegistry.registerModEntity(Enchanted_Cow.class, "EnchantedGoldenAppleCow", EnchantedCowID, this, 64, 1, false);
+    	
+    }
+}

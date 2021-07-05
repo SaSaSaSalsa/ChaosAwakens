@@ -1,0 +1,79 @@
+package Me.Akio.ChaosAwakens.Renderers;
+
+/*    */ import net.minecraft.client.model.ModelBase;
+/*    */ import net.minecraft.client.model.ModelCow;
+/*    */ import net.minecraft.client.renderer.entity.RenderLiving;
+/*    */ import net.minecraft.entity.Entity;
+/*    */ import net.minecraft.entity.EntityLiving;
+/*    */ import net.minecraft.entity.EntityLivingBase;
+/*    */ import net.minecraft.util.ResourceLocation;
+/*    */ import org.lwjgl.opengl.GL11;
+
+import Me.Akio.ChaosAwakens.Entities.CrystalCow;
+import Me.Akio.ChaosAwakens.Entities.Enchanted_Cow;
+import Me.Akio.ChaosAwakens.Entities.Golden_Cow;
+import Me.Akio.ChaosAwakens.Entities.Red_Cow;
+/*    */ 
+/*    */ public class RenderEnchantedCow
+/*    */   extends RenderLiving
+/*    */ {
+/*    */   protected ModelCow model;
+/* 16 */   private static final ResourceLocation texture3 = new ResourceLocation("chaosawakens", "crystal_cow.png");
+/* 17 */   private static final ResourceLocation texture1 = new ResourceLocation("chaosawakens", "red_cow.png");
+/* 18 */   private static final ResourceLocation texture2 = new ResourceLocation("chaosawakens", "gold_cow.png");
+/*    */   
+/*    */   public RenderEnchantedCow(ModelCow par1ModelBase, float par2) {
+/* 21 */     super((ModelBase)par1ModelBase, par2);
+/* 22 */     this.model = (ModelCow)this.mainModel;
+/*    */   }
+/*    */ 
+/*    */ 
+/*    */   
+/*    */   public void renderEnchantedCow(Red_Cow par1EntityEnchantedCow, double par2, double par4, double par6, float par8, float par9) {
+/* 28 */     super.doRender((EntityLiving)par1EntityEnchantedCow, par2, par4, par6, par8, par9);
+/*    */   }
+/*    */ 
+/*    */   
+/*    */   public void doRender(EntityLiving par1EntityLiving, double par2, double par4, double par6, float par8, float par9) {
+/* 33 */     renderEnchantedCow((Red_Cow)par1EntityLiving, par2, par4, par6, par8, par9);
+/*    */   }
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */   
+/*    */   public void doRender(Entity par1Entity, double par2, double par4, double par6, float par8, float par9) {
+/* 44 */     renderEnchantedCow((Red_Cow)par1Entity, par2, par4, par6, par8, par9);
+/*    */   }
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */   
+/*    */   public int shouldRenderPass(EntityLivingBase par1EntityLiving, int par2, float par3) {
+/* 53 */     if (par1EntityLiving instanceof Enchanted_Cow && par2 == 3) {
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */       
+/* 59 */       setRenderPassModel((ModelBase)this.model);
+/* 60 */       GL11.glColor3f(1.0F, 1.0F, 1.0F);
+/* 61 */       return 31;
+/*    */     } 
+/* 63 */     return -1;
+/*    */   }
+/*    */ 
+/*    */ 
+/*    */   
+/*    */   protected ResourceLocation getEntityTexture(Entity entity) {
+/* 69 */     if (entity instanceof Enchanted_Cow) return texture2; 
+/* 70 */     if (entity instanceof Golden_Cow) return texture2; 
+/* 71 */     if (entity instanceof CrystalCow) return texture3; 
+/* 72 */     return texture1;
+/*    */   }
+/*    */ }

@@ -1,0 +1,11 @@
+package Me.Akio.ChaosAwakens.Foods;
+
+import net.minecraft.item.ItemFood;
+
+public class MyButterCandy extends ItemFood{
+
+	public MyButterCandy(int p_i45340_1_, int i, double d, boolean p_i45340_2_) {
+		super(p_i45340_1_, p_i45340_2_);
+	}
+
+}

@@ -1,0 +1,21 @@
+package Me.Akio.ChaosAwakens.Foods;
+
+import Me.Akio.ChaosAwakens.ChaosAwaken;
+import net.minecraft.item.ItemFood;
+
+public class Cooked_Bacon extends ItemFood{
+
+	public Cooked_Bacon(int par1, int par2, double d, boolean par4) {
+	       super(par2, par4);
+		     setCreativeTab(ChaosAwaken.ChaosTab1);
+	}
+
+	public static void main(String[] args) {
+		cooked_bacon = new Cooked_Bacon(6, 6, 0.75, true).setUnlocalizedName("Cooked_Bacon").setTextureName("chaosawakens:cooked_bacon");
+		GameRegistry.registerItem(cooked_bacon, cooked_bacon.getUnlocalizedName().substring(5)); 
+		
+		bacon = new Bacon(6, 6, 0.75, true).setUnlocalizedName("Bacon").setTextureName("chaosawakens:bacon");
+		GameRegistry.registerItem(bacon, bacon.getUnlocalizedName().substring(5)); 
+	}
+
+}

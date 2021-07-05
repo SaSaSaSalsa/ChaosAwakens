@@ -1,0 +1,7 @@
+package Me.Akio.ChaosAwakens.Armors;
+
+import net.minecraft.item.Item;
+
+public class Amethyst_Helmet extends Item {
+
+}
