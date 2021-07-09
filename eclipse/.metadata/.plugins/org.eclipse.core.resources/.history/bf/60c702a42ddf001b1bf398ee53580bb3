@@ -1,0 +1,270 @@
+package Me.Akio.ChaosAwakens.Entities;
+
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+
+import Me.Akio.ChaosAwakens.ChaosAwaken;
+import Me.Akio.ChaosAwakens.util.GenericTargetSorter;
+import net.minecraft.block.Block;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.passive.EntityAmbientCreature;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.tileentity.TileEntityMobSpawner;
+import net.minecraft.util.ChunkCoordinates;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.MathHelper;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.EnumDifficulty;
+import net.minecraft.world.World;
+
+public class Butterfly   extends EntityAmbientCreature
+/*     */ {
+/*  33 */   private static final ResourceLocation texture1 = new ResourceLocation(ChaosAwaken.MODID + ":textures/entity/butterfly1.png");
+/*  34 */   private static final ResourceLocation texture2 = new ResourceLocation(ChaosAwaken.MODID + ":textures/entity/butterfly2.png");
+/*  35 */   private static final ResourceLocation texture3 = new ResourceLocation(ChaosAwaken.MODID + ":textures/entity/butterfly3.png");
+/*  36 */   private static final ResourceLocation texture4 = new ResourceLocation(ChaosAwaken.MODID + ":textures/entity/butterfly4.png");
+/*  37 */   private static final ResourceLocation texture5 = new ResourceLocation(ChaosAwaken.MODID + ":textures/entity/butterfly5.png");
+/*  38 */   private static final ResourceLocation texture6 = new ResourceLocation(ChaosAwaken.MODID + ":textures/entity/butterfly6.png");
+/*  39 */   private static final ResourceLocation texture7 = new ResourceLocation(ChaosAwaken.MODID + ":textures/entity/butterfly1.png");
+/*  40 */   private static final ResourceLocation texture8 = new ResourceLocation(ChaosAwaken.MODID + ":textures/entity/butterfly3.png");
+/*  41 */   private static final ResourceLocation texture9 = new ResourceLocation(ChaosAwaken.MODID + ":textures/entity/butterfly4.png");
+/*     */   
+/*  43 */   public int butterfly_type = 0;
+/*  44 */   private int attack_delay = 0;
+/*  45 */   private GenericTargetSorter TargetSorter = null;
+/*  46 */   private int force_sync = 25;
+/*     */   
+/*  48 */   private ChunkCoordinates currentFlightTarget = null;
+/*     */   
+/*     */   public Butterfly(World par1World) {
+/*  51 */     super(par1World);
+/*     */     
+/*  54 */     setSize(0.4F, 0.4F);
+/*  55 */     getNavigator().setAvoidsWater(true);
+/*  56 */     this.TargetSorter = new GenericTargetSorter((Entity)this);
+/*     */   }
+/*     */ 
+/*     */   
+/*     */   protected void applyEntityAttributes() {
+/*  61 */     super.applyEntityAttributes();
+/*  62 */     getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(mygetMaxHealth());
+/*  63 */     getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.10000000149011612D);
+/*  64 */     getAttributeMap().registerAttribute(SharedMonsterAttributes.attackDamage);
+/*  65 */     getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(0.0D);
+/*     */   }
+/*     */   
+/*     */ 
+/*     */   
+/*     */   protected void entityInit() {
+/*  89 */     super.entityInit();
+/*  90 */     this.dataWatcher.addObject(20, Integer.valueOf(this.butterfly_type));
+/*     */   }
+/*     */   
+/*     */   protected boolean canDespawn() {
+/*  94 */     if (isNoDespawnRequired()) return false; 
+/*  95 */     return true;
+/*     */   }
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */   
+/*     */   protected float getSoundVolume() {
+/* 103 */     return 0.0F;
+/*     */   }
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */   
+/*     */   protected float getSoundPitch() {
+/* 111 */     return 1.0F;
+/*     */   }
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */   
+/*     */   protected String getLivingSound() {
+/* 119 */     return null;
+/*     */   }
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */   
+/*     */   protected String getHurtSound() {
+/* 127 */     return null;
+/*     */   }
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */   
+/*     */   protected String getDeathSound() {
+/* 135 */     return null;
+/*     */   }
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */   
+/*     */   public boolean canBePushed() {
+/* 143 */     return true;
+/*     */   }
+/*     */ 
+/*     */   
+/*     */   protected void collideWithEntity(Entity par1Entity) {}
+/*     */   
+/*     */   protected void collideWithNearbyEntities() {}
+/*     */   
+/*     */   public int mygetMaxHealth() {
+/* 152 */     return 2;
+/*     */   }
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */   
+/*     */   protected boolean isAIEnabled() {
+/* 160 */     return true;
+/*     */   }
+/*     */   public boolean attackEntityAsMob(Entity par1Entity) {
+/* 215 */     if (ChaosAwaken.OreSpawnRand.nextInt(2) != 0) return false; 
+/* 216 */     if (this.worldObj.difficultySetting == EnumDifficulty.PEACEFUL) return false; 
+/* 217 */     boolean var4 = par1Entity.attackEntityFrom(DamageSource.causeMobDamage((EntityLivingBase)this), 1.0F);
+/* 218 */     return var4;
+/*     */   }
+
+/*     */   private boolean isSuitableTarget(EntityLivingBase par1EntityLiving, boolean par2) {
+/* 226 */     if (this.worldObj.difficultySetting == EnumDifficulty.PEACEFUL) return false;
+/*     */     
+/* 228 */     if (par1EntityLiving == null)
+/*     */     {
+/* 230 */       return false;
+/*     */     }
+/* 232 */     if (par1EntityLiving == this)
+/*     */     {
+/* 234 */       return false;
+/*     */     }
+/* 236 */     if (!par1EntityLiving.isEntityAlive())
+/*     */     {
+/*     */       
+/* 239 */       return false;
+/*     */     }
+/* 241 */     if (!getEntitySenses().canSee((Entity)par1EntityLiving))
+/*     */     {
+/*     */       
+/* 244 */       return false;
+/*     */     }
+/*     */     
+/* 247 */     if (par1EntityLiving instanceof EntityPlayer) {
+/*     */       
+/* 249 */       EntityPlayer p = (EntityPlayer)par1EntityLiving;
+/* 250 */       if (p.capabilities.isCreativeMode == true) {
+/* 251 */         return false;
+/*     */       }
+/* 253 */       return true;
+/*     */     } 
+/* 255 */     if (par1EntityLiving instanceof net.minecraft.entity.passive.EntityHorse)
+/*     */     {
+/* 257 */       return true;
+/*     */     }
+/* 259 */     return false;
+/*     */   }
+/*     */ 
+/*     */   
+/*     */   private EntityLivingBase findSomethingToAttack() {
+/* 264 */     List<?> var5 = this.worldObj.getEntitiesWithinAABB(EntityLivingBase.class, this.boundingBox.expand(8.0D, 5.0D, 8.0D));
+/* 265 */     Collections.sort(var5, this.TargetSorter);
+/* 266 */     Iterator<?> var2 = var5.iterator();
+/* 267 */     Entity var3 = null;
+/* 268 */     EntityLivingBase var4 = null;
+/*     */     
+/* 270 */     while (var2.hasNext()) {
+/*     */       
+/* 272 */       var3 = (Entity)var2.next();
+/* 273 */       var4 = (EntityLivingBase)var3;
+/*     */       
+/* 275 */       if (isSuitableTarget(var4, false))
+/*     */       {
+/* 277 */         return var4;
+/*     */       }
+/*     */     } 
+/* 280 */     return null;
+/*     */   }
+/*     */ 
+/*     */   
+/*     */   public void onUpdate() {
+/* 285 */     super.onUpdate();
+/* 286 */     this.motionY *= 0.6000000238418579D;
+/*     */     
+/* 288 */     this.force_sync--;
+/* 289 */     if (this.force_sync < 0) {
+/* 290 */       this.force_sync = 25;
+/* 291 */       if (this.worldObj.isRemote) {
+/* 292 */         this.butterfly_type = this.dataWatcher.getWatchableObjectInt(20);
+/*     */       } else {
+/* 294 */         this.dataWatcher.updateObject(20, Integer.valueOf(this.butterfly_type));
+/*     */       } 
+/*     */     } 
+/*     */   }
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */   
+/*     */   protected boolean canTriggerWalking() {
+/* 305 */     return false;
+/*     */   }
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */   
+/*     */   protected void fall(float par1) {}
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */   
+/*     */   protected void updateFallState(double par1, boolean par3) {}
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */   
+/*     */   public boolean doesEntityNotTriggerPressurePlate() {
+/* 324 */     return true;
+/*     */   }
+/*     */ 
+/*     */ 
+/*     */   
+/*     */   public void initCreature() {}
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */   
+/*     */   public void writeEntityToNBT(NBTTagCompound par1NBTTagCompound) {
+/* 417 */     super.writeEntityToNBT(par1NBTTagCompound);
+/*     */     
+/* 419 */     par1NBTTagCompound.setInteger("ButterflyType", this.butterfly_type);
+/*     */   }
+
+/*     */   public void readEntityFromNBT(NBTTagCompound par1NBTTagCompound) {
+/* 428 */     super.readEntityFromNBT(par1NBTTagCompound);
+/*     */     
+/* 430 */     this.butterfly_type = par1NBTTagCompound.getInteger("ButterflyType");
+/*     */   }
+ }
+

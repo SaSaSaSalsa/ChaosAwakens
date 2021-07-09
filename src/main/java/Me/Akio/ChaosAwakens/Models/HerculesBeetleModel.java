@@ -1,0 +1,585 @@
+package Me.Akio.ChaosAwakens.Models;
+
+
+
+import net.minecraft.client.model.ModelBase;
+import net.minecraft.client.model.ModelBox;
+import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.entity.Entity;
+
+// Made with Blockbench 3.9.2
+// Exported for Minecraft version 1.7 - 1.12
+// Paste this class into your mod and generate all required imports
+
+
+public class HerculesBeetleModel extends ModelBase {
+	private final ModelRenderer hercules;
+	private final ModelRenderer main_body;
+	private final ModelRenderer ab;
+	private final ModelRenderer ab_r1;
+	private final ModelRenderer legs;
+	private final ModelRenderer leg;
+	private final ModelRenderer leg_r1;
+	private final ModelRenderer leg_segment;
+	private final ModelRenderer leg_segment_r1;
+	private final ModelRenderer leg_segment2;
+	private final ModelRenderer leg_segment2_r1;
+	private final ModelRenderer leg2;
+	private final ModelRenderer leg2_r1;
+	private final ModelRenderer leg_segment3;
+	private final ModelRenderer leg_segment3_r1;
+	private final ModelRenderer leg_segment4;
+	private final ModelRenderer leg_segment4_r1;
+	private final ModelRenderer leg3;
+	private final ModelRenderer leg3_r1;
+	private final ModelRenderer leg_segment5;
+	private final ModelRenderer leg_segment5_r1;
+	private final ModelRenderer leg_segment6;
+	private final ModelRenderer leg_segment6_r1;
+	private final ModelRenderer legs2;
+	private final ModelRenderer leg4;
+	private final ModelRenderer leg4_r1;
+	private final ModelRenderer leg_segment7;
+	private final ModelRenderer leg_segment7_r1;
+	private final ModelRenderer leg_segment8;
+	private final ModelRenderer leg_segment8_r1;
+	private final ModelRenderer leg5;
+	private final ModelRenderer leg5_r1;
+	private final ModelRenderer leg_segment9;
+	private final ModelRenderer leg_segment9_r1;
+	private final ModelRenderer leg_segment10;
+	private final ModelRenderer leg_segment10_r1;
+	private final ModelRenderer leg6;
+	private final ModelRenderer leg6_r1;
+	private final ModelRenderer leg_segment11;
+	private final ModelRenderer leg_segment11_r1;
+	private final ModelRenderer leg_segment12;
+	private final ModelRenderer leg_segment12_r1;
+	private final ModelRenderer head_segment;
+	private final ModelRenderer head_segment_2;
+	private final ModelRenderer head_segment_3;
+	private final ModelRenderer head;
+	private final ModelRenderer head_r1;
+	private final ModelRenderer antenna;
+	private final ModelRenderer antenna_r1;
+	private final ModelRenderer antenna2;
+	private final ModelRenderer antenna2_r1;
+	private final ModelRenderer antenna3;
+	private final ModelRenderer antenna3_r1;
+	private final ModelRenderer antenna4;
+	private final ModelRenderer antenna4_r1;
+	private final ModelRenderer bottom_mandible_segment;
+	private final ModelRenderer bottom_mandible_segment_r1;
+	private final ModelRenderer bottom_mandible_segment_2;
+	private final ModelRenderer bottom_mandible_segment_2_r1;
+	private final ModelRenderer bottom_mandible_segment_3;
+	private final ModelRenderer bottom_mandible_segment_3_r1;
+	private final ModelRenderer bottom_mandible_segment_4;
+	private final ModelRenderer bottom_mandible_segment_4_r1;
+	private final ModelRenderer bottom_mandible_segment_6;
+	private final ModelRenderer bottom_mandible_segment_6_r1;
+	private final ModelRenderer mandible;
+	private final ModelRenderer mandible_r1;
+	private final ModelRenderer mandible_segment_2;
+	private final ModelRenderer mandible_segment_2_r1;
+	private final ModelRenderer mandible_segment_3;
+	private final ModelRenderer mandible_segment_3_r1;
+	private final ModelRenderer mandible_segment_4;
+	private final ModelRenderer mandible_segment_4_r1;
+	private final ModelRenderer mandible_segment_5;
+	private final ModelRenderer mandible_segment_5_r1;
+	private final ModelRenderer mandible_segment_5_r2;
+	private final ModelRenderer husk_1;
+	private final ModelRenderer husk_1_r1;
+	private final ModelRenderer wing_1;
+	private final ModelRenderer wing_1_r1;
+	private final ModelRenderer husk_2;
+	private final ModelRenderer husk_2_r1;
+	private final ModelRenderer wing_2;
+	private final ModelRenderer wing_2_r1;
+
+	public HerculesBeetleModel() {
+		this.textureWidth = 80;
+		this.textureHeight = 80;
+
+		this.hercules = new ModelRenderer(this);
+		this.hercules.setRotationPoint(0.0F, 16.6875F, -7.5F);
+		
+
+		this.main_body = new ModelRenderer(this);
+		this.main_body.setRotationPoint(0.0F, 0.0F, 0.0F);
+		this.hercules.addChild(main_body);
+		
+
+		this.ab = new ModelRenderer(this);
+		this.ab.setRotationPoint(0.0F, 2.4492F, 11.3983F);
+		this.main_body.addChild(ab);
+		
+
+		this.ab_r1 = new ModelRenderer(this);
+		this.ab_r1.setRotationPoint(0.0F, 0.0F, 0.0F);
+		this.ab.addChild(ab_r1);
+		this.setRotationAngle(ab_r1, -0.0436F, 0.0F, 0.0F);
+		this.ab_r1.cubeList.add(new ModelBox(ab_r1, 0, 0, -3.0F, -1.5F, -4.5F, 6, 3, 9, 0.1F));
+
+		this.legs = new ModelRenderer(this);
+		this.legs.setRotationPoint(-2.25F, 3.75F, 13.625F);
+		this.main_body.addChild(legs);
+		
+
+		this.leg = new ModelRenderer(this);
+		this.leg.setRotationPoint(0.0F, 0.0F, 0.0F);
+		this.legs.addChild(leg);
+		this.setRotationAngle(leg, 0.0F, 0.3054F, 0.0698F);
+		
+
+		this.leg_r1 = new ModelRenderer(this);
+		this.leg_r1.setRotationPoint(-1.1842F, 0.5822F, -0.3536F);
+		this.leg.addChild(leg_r1);
+		this.setRotationAngle(leg_r1, -0.0436F, 0.5061F, -0.4189F);
+		this.leg_r1.cubeList.add(new ModelBox(leg_r1, 16, 62, -3.0F, -1.0F, -1.0F, 6, 2, 2, -0.4F));
+
+		this.leg_segment = new ModelRenderer(this);
+		this.leg_segment.setRotationPoint(-4.4342F, 2.2072F, 2.2089F);
+		this.leg.addChild(leg_segment);
+		
+
+		this.leg_segment_r1 = new ModelRenderer(this);
+		this.leg_segment_r1.setRotationPoint(0.0F, 0.0F, 0.0F);
+		this.leg_segment.addChild(leg_segment_r1);
+		this.setRotationAngle(leg_segment_r1, -0.0436F, 0.7243F, -0.5236F);
+		this.leg_segment_r1.cubeList.add(new ModelBox(leg_segment_r1, 58, 61, -3.0F, -1.0F, -1.0F, 6, 2, 2, -0.5F));
+
+		this.leg_segment2 = new ModelRenderer(this);
+		this.leg_segment2.setRotationPoint(0.0F, 0.0F, 0.0F);
+		this.leg_segment.addChild(leg_segment2);
+		
+
+		this.leg_segment2_r1 = new ModelRenderer(this);
+		this.leg_segment2_r1.setRotationPoint(-2.375F, 1.25F, 3.375F);
+		this.leg_segment2.addChild(leg_segment2_r1);
+		this.setRotationAngle(leg_segment2_r1, 0.1833F, 1.0734F, -0.2618F);
+		this.leg_segment2_r1.cubeList.add(new ModelBox(leg_segment2_r1, 0, 61, -3.0F, -1.0F, -1.0F, 6, 2, 2, -0.6F));
+
+		this.leg2 = new ModelRenderer(this);
+		this.leg2.setRotationPoint(-1.0F, 0.0F, -2.25F);
+		this.legs.addChild(leg2);
+		this.setRotationAngle(leg2, 0.0F, -1.117F, 0.0524F);
+		
+
+		this.leg2_r1 = new ModelRenderer(this);
+		this.leg2_r1.setRotationPoint(-1.1842F, 0.5822F, -0.3536F);
+		this.leg2.addChild(leg2_r1);
+		this.setRotationAngle(leg2_r1, -0.0436F, 1.309F, -0.8378F);
+		this.leg2_r1.cubeList.add(new ModelBox(leg2_r1, 60, 47, -3.0F, -1.0F, -1.0F, 6, 2, 2, -0.4F));
+
+		this.leg_segment3 = new ModelRenderer(this);
+		this.leg_segment3.setRotationPoint(-4.4342F, 2.2072F, 2.2089F);
+		this.leg2.addChild(leg_segment3);
+		
+
+		this.leg_segment3_r1 = new ModelRenderer(this);
+		this.leg_segment3_r1.setRotationPoint(2.7425F, -0.4369F, 1.3631F);
+		this.leg_segment3.addChild(leg_segment3_r1);
+		this.setRotationAngle(leg_segment3_r1, -1.3277F, 1.1173F, -2.1662F);
+		this.leg_segment3_r1.cubeList.add(new ModelBox(leg_segment3_r1, 60, 32, -3.6829F, -0.6182F, -0.541F, 6, 2, 2, -0.5F));
+
+		this.leg_segment4 = new ModelRenderer(this);
+		this.leg_segment4.setRotationPoint(0.0F, 0.0F, 0.0F);
+		this.leg_segment3.addChild(leg_segment4);
+		
+
+		this.leg_segment4_r1 = new ModelRenderer(this);
+		this.leg_segment4_r1.setRotationPoint(5.1988F, 1.165F, 5.8945F);
+		this.leg_segment4.addChild(leg_segment4_r1);
+		this.setRotationAngle(leg_segment4_r1, 2.8511F, 1.103F, -2.619F);
+		this.leg_segment4_r1.cubeList.add(new ModelBox(leg_segment4_r1, 59, 57, -3.0389F, -0.856F, -1.2355F, 6, 2, 2, -0.6F));
+
+		this.leg3 = new ModelRenderer(this);
+		this.leg3.setRotationPoint(-0.8125F, 0.0F, -5.0625F);
+		this.legs.addChild(leg3);
+		this.setRotationAngle(leg3, 0.0F, -1.0123F, 0.0698F);
+		
+
+		this.leg3_r1 = new ModelRenderer(this);
+		this.leg3_r1.setRotationPoint(-1.1842F, 0.5822F, -0.3536F);
+		this.leg3.addChild(leg3_r1);
+		this.setRotationAngle(leg3_r1, -0.0436F, 0.5411F, -0.4189F);
+		this.leg3_r1.cubeList.add(new ModelBox(leg3_r1, 44, 59, -3.0F, -1.0F, -1.0F, 6, 2, 2, -0.4F));
+
+		this.leg_segment5 = new ModelRenderer(this);
+		this.leg_segment5.setRotationPoint(-1.0341F, 3.1121F, -0.1608F);
+		this.leg3.addChild(leg_segment5);
+		
+
+		this.leg_segment5_r1 = new ModelRenderer(this);
+		this.leg_segment5_r1.setRotationPoint(-4.6375F, -0.7799F, 1.1323F);
+		this.leg_segment5.addChild(leg_segment5_r1);
+		this.setRotationAngle(leg_segment5_r1, -0.0436F, -0.0436F, -0.4538F);
+		this.leg_segment5_r1.cubeList.add(new ModelBox(leg_segment5_r1, 59, 0, -2.4592F, -0.6705F, -1.2306F, 6, 2, 2, -0.5F));
+
+		this.leg_segment6 = new ModelRenderer(this);
+		this.leg_segment6.setRotationPoint(-3.4F, -0.9049F, 2.3697F);
+		this.leg_segment5.addChild(leg_segment6);
+		
+
+		this.leg_segment6_r1 = new ModelRenderer(this);
+		this.leg_segment6_r1.setRotationPoint(-5.3638F, 1.339F, -2.3046F);
+		this.leg_segment6.addChild(leg_segment6_r1);
+		this.setRotationAngle(leg_segment6_r1, -0.0436F, -0.2793F, -0.0436F);
+		this.leg_segment6_r1.cubeList.add(new ModelBox(leg_segment6_r1, 28, 58, -2.521F, -0.9748F, -1.0904F, 6, 2, 2, -0.6F));
+
+		this.legs2 = new ModelRenderer(this);
+		this.legs2.setRotationPoint(2.25F, 3.75F, 13.625F);
+		this.main_body.addChild(legs2);
+		
+
+		this.leg4 = new ModelRenderer(this);
+		this.leg4.setRotationPoint(0.0F, 0.0F, 0.0F);
+		this.legs2.addChild(leg4);
+		this.setRotationAngle(leg4, 0.0F, -0.3054F, -0.0698F);
+		
+
+		this.leg4_r1 = new ModelRenderer(this);
+		this.leg4_r1.setRotationPoint(1.1842F, 0.5822F, -0.3536F);
+		this.leg4.addChild(leg4_r1);
+		this.setRotationAngle(leg4_r1, -0.0436F, -0.5061F, 0.4189F);
+		this.leg4_r1.cubeList.add(new ModelBox(leg4_r1, 58, 13, -3.0F, -1.0F, -1.0F, 6, 2, 2, -0.4F));
+
+		this.leg_segment7 = new ModelRenderer(this);
+		this.leg_segment7.setRotationPoint(4.4342F, 2.2072F, 2.2089F);
+		this.leg4.addChild(leg_segment7);
+		
+
+		this.leg_segment7_r1 = new ModelRenderer(this);
+		this.leg_segment7_r1.setRotationPoint(0.0F, 0.0F, 0.0F);
+		this.leg_segment7.addChild(leg_segment7_r1);
+		this.setRotationAngle(leg_segment7_r1, -0.0436F, -0.7243F, 0.5236F);
+		this.leg_segment7_r1.cubeList.add(new ModelBox(leg_segment7_r1, 57, 28, -3.0F, -1.0F, -1.0F, 6, 2, 2, -0.5F));
+
+		this.leg_segment8 = new ModelRenderer(this);
+		this.leg_segment8.setRotationPoint(0.0F, 0.0F, 0.0F);
+		this.leg_segment7.addChild(leg_segment8);
+		
+
+		this.leg_segment8_r1 = new ModelRenderer(this);
+		this.leg_segment8_r1.setRotationPoint(2.375F, 1.25F, 3.375F);
+		this.leg_segment8.addChild(leg_segment8_r1);
+		this.setRotationAngle(leg_segment8_r1, 0.1833F, -1.0734F, 0.2618F);
+		this.leg_segment8_r1.cubeList.add(new ModelBox(leg_segment8_r1, 57, 24, -3.0F, -1.0F, -1.0F, 6, 2, 2, -0.6F));
+
+		this.leg5 = new ModelRenderer(this);
+		this.leg5.setRotationPoint(1.0F, 0.0F, -2.25F);
+		this.legs2.addChild(leg5);
+		this.setRotationAngle(leg5, 0.0F, 1.117F, -0.0524F);
+		
+
+		this.leg5_r1 = new ModelRenderer(this);
+		this.leg5_r1.setRotationPoint(1.1842F, 0.5822F, -0.3536F);
+		this.leg5.addChild(leg5_r1);
+		this.setRotationAngle(leg5_r1, -0.0436F, -1.309F, 0.8378F);
+		this.leg5_r1.cubeList.add(new ModelBox(leg5_r1, 12, 57, -3.0F, -1.0F, -1.0F, 6, 2, 2, -0.4F));
+
+		this.leg_segment9 = new ModelRenderer(this);
+		this.leg_segment9.setRotationPoint(-0.4377F, 2.8573F, 0.078F);
+		this.leg5.addChild(leg_segment9);
+		
+
+		this.leg_segment9_r1 = new ModelRenderer(this);
+		this.leg_segment9_r1.setRotationPoint(2.1294F, -1.087F, 3.494F);
+		this.leg_segment9.addChild(leg_segment9_r1);
+		this.setRotationAngle(leg_segment9_r1, -1.3277F, -1.1173F, 2.1662F);
+		this.leg_segment9_r1.cubeList.add(new ModelBox(leg_segment9_r1, 56, 43, -2.3171F, -0.6182F, -0.541F, 6, 2, 2, -0.5F));
+
+		this.leg_segment10 = new ModelRenderer(this);
+		this.leg_segment10.setRotationPoint(-0.2879F, 0.659F, 7.7899F);
+		this.leg_segment9.addChild(leg_segment10);
+		
+
+		this.leg_segment10_r1 = new ModelRenderer(this);
+		this.leg_segment10_r1.setRotationPoint(-0.0389F, -0.144F, 0.2355F);
+		this.leg_segment10.addChild(leg_segment10_r1);
+		this.setRotationAngle(leg_segment10_r1, 2.8511F, -1.103F, 2.619F);
+		this.leg_segment10_r1.cubeList.add(new ModelBox(leg_segment10_r1, 45, 55, -2.9611F, -0.856F, -1.2355F, 6, 2, 2, -0.6F));
+
+		this.leg6 = new ModelRenderer(this);
+		this.leg6.setRotationPoint(0.8125F, 0.0F, -5.0625F);
+		this.legs2.addChild(leg6);
+		this.setRotationAngle(leg6, 0.0F, 1.0123F, -0.0698F);
+		
+
+		this.leg6_r1 = new ModelRenderer(this);
+		this.leg6_r1.setRotationPoint(1.1842F, 0.5822F, -0.3536F);
+		this.leg6.addChild(leg6_r1);
+		this.setRotationAngle(leg6_r1, -0.0436F, -0.5411F, 0.4189F);
+		this.leg6_r1.cubeList.add(new ModelBox(leg6_r1, 55, 18, -3.0F, -1.0F, -1.0F, 6, 2, 2, -0.4F));
+
+		this.leg_segment11 = new ModelRenderer(this);
+		this.leg_segment11.setRotationPoint(4.4342F, 2.2072F, 2.2089F);
+		this.leg6.addChild(leg_segment11);
+		
+
+		this.leg_segment11_r1 = new ModelRenderer(this);
+		this.leg_segment11_r1.setRotationPoint(1.2374F, 0.125F, -1.2374F);
+		this.leg_segment11.addChild(leg_segment11_r1);
+		this.setRotationAngle(leg_segment11_r1, -0.0436F, 0.0436F, 0.4538F);
+		this.leg_segment11_r1.cubeList.add(new ModelBox(leg_segment11_r1, 53, 37, -3.5408F, -0.6705F, -1.2306F, 6, 2, 2, -0.5F));
+
+		this.leg_segment12 = new ModelRenderer(this);
+		this.leg_segment12.setRotationPoint(4.8848F, 1.3642F, -2.395F);
+		this.leg_segment11.addChild(leg_segment12);
+		
+
+		this.leg_segment12_r1 = new ModelRenderer(this);
+		this.leg_segment12_r1.setRotationPoint(0.479F, -0.0252F, 0.0904F);
+		this.leg_segment12.addChild(leg_segment12_r1);
+		this.setRotationAngle(leg_segment12_r1, -0.0436F, 0.2793F, 0.0436F);
+		this.leg_segment12_r1.cubeList.add(new ModelBox(leg_segment12_r1, 14, 53, -3.479F, -0.9748F, -1.0904F, 6, 2, 2, -0.6F));
+
+		this.head_segment = new ModelRenderer(this);
+		this.head_segment.setRotationPoint(0.0F, 2.375F, 9.5F);
+		this.main_body.addChild(head_segment);
+		this.setRotationAngle(head_segment, -0.0436F, 0.0F, 0.0F);
+		this.head_segment.cubeList.add(new ModelBox(head_segment, 38, 45, -3.0F, -3.3968F, -2.813F, 6, 5, 2, 0.15F));
+
+		this.head_segment_2 = new ModelRenderer(this);
+		this.head_segment_2.setRotationPoint(0.0F, 0.2282F, -1.5005F);
+		this.head_segment.addChild(head_segment_2);
+		this.setRotationAngle(head_segment_2, -0.0873F, 0.0F, 0.0F);
+		this.head_segment_2.cubeList.add(new ModelBox(head_segment_2, 18, 46, -3.0F, -3.625F, -2.75F, 6, 5, 2, 0.1F));
+
+		this.head_segment_3 = new ModelRenderer(this);
+		this.head_segment_3.setRotationPoint(0.0F, 0.0F, -1.75F);
+		this.head_segment_2.addChild(head_segment_3);
+		this.head_segment_3.cubeList.add(new ModelBox(head_segment_3, 24, 27, -3.0F, -3.625F, -5.25F, 6, 5, 5, 0.2F));
+
+		this.head = new ModelRenderer(this);
+		this.head.setRotationPoint(-0.5F, 1.0653F, -5.4957F);
+		this.head_segment_3.addChild(head);
+		
+
+		this.head_r1 = new ModelRenderer(this);
+		this.head_r1.setRotationPoint(0.0F, -0.875F, 0.25F);
+		this.head.addChild(head_r1);
+		this.setRotationAngle(head_r1, 0.5236F, 0.0F, 0.0F);
+		this.head_r1.cubeList.add(new ModelBox(head_r1, 0, 44, -2.0F, -1.0F, -2.5F, 5, 4, 4, -0.9F));
+
+		this.antenna = new ModelRenderer(this);
+		this.antenna.setRotationPoint(-0.2518F, 2.7872F, -1.4428F);
+		this.head.addChild(antenna);
+		
+
+		this.antenna_r1 = new ModelRenderer(this);
+		this.antenna_r1.setRotationPoint(-0.625F, -0.25F, -0.25F);
+		this.antenna.addChild(antenna_r1);
+		this.setRotationAngle(antenna_r1, 0.3257F, -0.4566F, -1.0538F);
+		this.antenna_r1.cubeList.add(new ModelBox(antenna_r1, 53, 7, -1.3413F, -1.237F, -1.199F, 4, 3, 3, -1.3F));
+
+		this.antenna2 = new ModelRenderer(this);
+		this.antenna2.setRotationPoint(-0.4498F, 0.222F, -0.4081F);
+		this.antenna.addChild(antenna2);
+		this.setRotationAngle(antenna2, -0.3995F, -0.6443F, -0.285F);
+		
+
+		this.antenna2_r1 = new ModelRenderer(this);
+		this.antenna2_r1.setRotationPoint(0.0F, 0.0F, 0.0F);
+		this.antenna2.addChild(antenna2_r1);
+		this.setRotationAngle(antenna2_r1, 0.3257F, -0.4566F, -1.0538F);
+		this.antenna2_r1.cubeList.add(new ModelBox(antenna2_r1, 31, 52, -2.0F, -1.5F, -1.5F, 4, 3, 3, -1.35F));
+
+		this.antenna3 = new ModelRenderer(this);
+		this.antenna3.setRotationPoint(1.2518F, 2.7872F, -1.4428F);
+		this.head.addChild(antenna3);
+		
+
+		this.antenna3_r1 = new ModelRenderer(this);
+		this.antenna3_r1.setRotationPoint(0.625F, -0.25F, -0.25F);
+		this.antenna3.addChild(antenna3_r1);
+		this.setRotationAngle(antenna3_r1, 0.3257F, 0.4566F, 1.0538F);
+		this.antenna3_r1.cubeList.add(new ModelBox(antenna3_r1, 0, 52, -2.6587F, -1.237F, -1.199F, 4, 3, 3, -1.3F));
+
+		this.antenna4 = new ModelRenderer(this);
+		this.antenna4.setRotationPoint(0.4498F, 0.222F, -0.4081F);
+		this.antenna3.addChild(antenna4);
+		this.setRotationAngle(antenna4, -0.3995F, 0.6443F, 0.285F);
+		
+
+		this.antenna4_r1 = new ModelRenderer(this);
+		this.antenna4_r1.setRotationPoint(0.0F, 0.0F, 0.0F);
+		this.antenna4.addChild(antenna4_r1);
+		this.setRotationAngle(antenna4_r1, 0.3257F, 0.4566F, 1.0538F);
+		this.antenna4_r1.cubeList.add(new ModelBox(antenna4_r1, 46, 31, -2.0F, -1.5F, -1.5F, 4, 3, 3, -1.35F));
+
+		this.bottom_mandible_segment = new ModelRenderer(this);
+		this.bottom_mandible_segment.setRotationPoint(0.0F, -0.875F, 0.25F);
+		this.head.addChild(bottom_mandible_segment);
+		
+
+		this.bottom_mandible_segment_r1 = new ModelRenderer(this);
+		this.bottom_mandible_segment_r1.setRotationPoint(0.5F, 2.116F, -1.6651F);
+		this.bottom_mandible_segment.addChild(bottom_mandible_segment_r1);
+		this.setRotationAngle(bottom_mandible_segment_r1, 0.3927F, 0.0F, 0.0F);
+		this.bottom_mandible_segment_r1.cubeList.add(new ModelBox(bottom_mandible_segment_r1, 41, 18, -2.5F, -2.0F, -1.75F, 5, 4, 4, -1.1F));
+
+		this.bottom_mandible_segment_2 = new ModelRenderer(this);
+		this.bottom_mandible_segment_2.setRotationPoint(0.5F, 2.116F, -1.6651F);
+		this.bottom_mandible_segment.addChild(bottom_mandible_segment_2);
+		
+
+		this.bottom_mandible_segment_2_r1 = new ModelRenderer(this);
+		this.bottom_mandible_segment_2_r1.setRotationPoint(0.0F, 0.3759F, -1.1921F);
+		this.bottom_mandible_segment_2.addChild(bottom_mandible_segment_2_r1);
+		this.setRotationAngle(bottom_mandible_segment_2_r1, 0.2182F, 0.0F, 0.0F);
+		this.bottom_mandible_segment_2_r1.cubeList.add(new ModelBox(bottom_mandible_segment_2_r1, 17, 16, -2.5F, -2.0F, -4.25F, 5, 4, 7, -1.2F));
+
+		this.bottom_mandible_segment_3 = new ModelRenderer(this);
+		this.bottom_mandible_segment_3.setRotationPoint(0.0F, 0.3759F, -1.1921F);
+		this.bottom_mandible_segment_2.addChild(bottom_mandible_segment_3);
+		
+
+		this.bottom_mandible_segment_3_r1 = new ModelRenderer(this);
+		this.bottom_mandible_segment_3_r1.setRotationPoint(0.0F, 0.974F, -4.3933F);
+		this.bottom_mandible_segment_3.addChild(bottom_mandible_segment_3_r1);
+		this.setRotationAngle(bottom_mandible_segment_3_r1, 0.0873F, 0.0F, 0.0F);
+		this.bottom_mandible_segment_3_r1.cubeList.add(new ModelBox(bottom_mandible_segment_3_r1, 0, 12, -2.5F, -2.25F, -4.0F, 5, 4, 7, -1.25F));
+
+		this.bottom_mandible_segment_4 = new ModelRenderer(this);
+		this.bottom_mandible_segment_4.setRotationPoint(0.0F, 0.974F, -4.3933F);
+		this.bottom_mandible_segment_3.addChild(bottom_mandible_segment_4);
+		
+
+		this.bottom_mandible_segment_4_r1 = new ModelRenderer(this);
+		this.bottom_mandible_segment_4_r1.setRotationPoint(0.0F, 0.0451F, -3.384F);
+		this.bottom_mandible_segment_4.addChild(bottom_mandible_segment_4_r1);
+		this.setRotationAngle(bottom_mandible_segment_4_r1, -0.192F, 0.0F, 0.0F);
+		this.bottom_mandible_segment_4_r1.cubeList.add(new ModelBox(bottom_mandible_segment_4_r1, 20, 37, -2.5F, -2.25F, -2.75F, 5, 4, 5, -1.3F));
+
+		this.bottom_mandible_segment_6 = new ModelRenderer(this);
+		this.bottom_mandible_segment_6.setRotationPoint(0.0F, 0.0451F, -3.384F);
+		this.bottom_mandible_segment_4.addChild(bottom_mandible_segment_6);
+		
+
+		this.bottom_mandible_segment_6_r1 = new ModelRenderer(this);
+		this.bottom_mandible_segment_6_r1.setRotationPoint(0.0F, 0.0F, 0.0F);
+		this.bottom_mandible_segment_6.addChild(bottom_mandible_segment_6_r1);
+		this.setRotationAngle(bottom_mandible_segment_6_r1, -0.8465F, 0.0F, 0.0F);
+		this.bottom_mandible_segment_6_r1.cubeList.add(new ModelBox(bottom_mandible_segment_6_r1, 40, 37, -2.0F, -1.0F, -4.0F, 4, 3, 5, -1.3F));
+
+		this.mandible = new ModelRenderer(this);
+		this.mandible.setRotationPoint(0.0F, -2.1657F, -4.7495F);
+		this.head_segment_3.addChild(mandible);
+		this.setRotationAngle(mandible, 0.2094F, 0.0F, 0.0F);
+		
+
+		this.mandible_r1 = new ModelRenderer(this);
+		this.mandible_r1.setRotationPoint(0.0F, 0.75F, -1.25F);
+		this.mandible.addChild(mandible_r1);
+		this.setRotationAngle(mandible_r1, -0.2182F, 0.0F, 0.0F);
+		this.mandible_r1.cubeList.add(new ModelBox(mandible_r1, 15, 27, -1.5F, -2.25F, -0.75F, 3, 3, 2, 0.4F));
+
+		this.mandible_segment_2 = new ModelRenderer(this);
+		this.mandible_segment_2.setRotationPoint(0.0F, 0.75F, -1.25F);
+		this.mandible.addChild(mandible_segment_2);
+		
+
+		this.mandible_segment_2_r1 = new ModelRenderer(this);
+		this.mandible_segment_2_r1.setRotationPoint(0.0F, 0.0F, 0.0F);
+		this.mandible_segment_2.addChild(mandible_segment_2_r1);
+		this.setRotationAngle(mandible_segment_2_r1, -0.2182F, 0.0F, 0.0F);
+		this.mandible_segment_2_r1.cubeList.add(new ModelBox(mandible_segment_2_r1, 50, 48, -1.5F, -2.25F, -5.0F, 3, 3, 4, 0.2F));
+
+		this.mandible_segment_3 = new ModelRenderer(this);
+		this.mandible_segment_3.setRotationPoint(0.0F, 0.0F, 0.0F);
+		this.mandible_segment_2.addChild(mandible_segment_3);
+		
+
+		this.mandible_segment_3_r1 = new ModelRenderer(this);
+		this.mandible_segment_3_r1.setRotationPoint(0.0F, -2.1391F, -6.1836F);
+		this.mandible_segment_3.addChild(mandible_segment_3_r1);
+		this.setRotationAngle(mandible_segment_3_r1, -0.1134F, 0.0F, 0.0F);
+		this.mandible_segment_3_r1.cubeList.add(new ModelBox(mandible_segment_3_r1, 49, 0, -1.5F, -1.375F, -2.0F, 3, 3, 4, 0.0F));
+
+		this.mandible_segment_4 = new ModelRenderer(this);
+		this.mandible_segment_4.setRotationPoint(0.0F, -2.1391F, -6.1836F);
+		this.mandible_segment_3.addChild(mandible_segment_4);
+		
+
+		this.mandible_segment_4_r1 = new ModelRenderer(this);
+		this.mandible_segment_4_r1.setRotationPoint(0.0F, 0.0F, 0.0F);
+		this.mandible_segment_4.addChild(mandible_segment_4_r1);
+		this.setRotationAngle(mandible_segment_4_r1, -0.0262F, 0.0F, 0.0F);
+		this.mandible_segment_4_r1.cubeList.add(new ModelBox(mandible_segment_4_r1, 36, 0, -1.5F, -1.375F, -7.75F, 3, 3, 7, -0.1F));
+
+		this.mandible_segment_5 = new ModelRenderer(this);
+		this.mandible_segment_5.setRotationPoint(0.0F, 0.0F, 0.0F);
+		this.mandible_segment_4.addChild(mandible_segment_5);
+		
+
+		this.mandible_segment_5_r1 = new ModelRenderer(this);
+		this.mandible_segment_5_r1.setRotationPoint(0.0F, 0.7598F, -12.82F);
+		this.mandible_segment_5.addChild(mandible_segment_5_r1);
+		this.setRotationAngle(mandible_segment_5_r1, -2.0508F, 0.0F, 0.0F);
+		this.mandible_segment_5_r1.cubeList.add(new ModelBox(mandible_segment_5_r1, 40, 10, -2.0F, -1.25F, -2.5F, 4, 3, 5, -1.3F));
+
+		this.mandible_segment_5_r2 = new ModelRenderer(this);
+		this.mandible_segment_5_r2.setRotationPoint(0.0F, 0.0F, 0.0F);
+		this.mandible_segment_5.addChild(mandible_segment_5_r2);
+		this.setRotationAngle(mandible_segment_5_r2, 0.0436F, 0.0F, 0.0F);
+		this.mandible_segment_5_r2.cubeList.add(new ModelBox(mandible_segment_5_r2, 0, 34, -1.5F, -1.875F, -13.25F, 3, 3, 7, -0.4F));
+
+		this.husk_1 = new ModelRenderer(this);
+		this.husk_1.setRotationPoint(0.0F, 2.375F, 10.0F);
+		this.main_body.addChild(husk_1);
+		
+
+		this.husk_1_r1 = new ModelRenderer(this);
+		this.husk_1_r1.setRotationPoint(0.0F, 0.0F, 0.0F);
+		this.husk_1.addChild(husk_1_r1);
+		this.setRotationAngle(husk_1_r1, 0.1309F, -0.3927F, 0.0F);
+		this.husk_1_r1.cubeList.add(new ModelBox(husk_1_r1, 21, 3, -3.0F, -3.5F, -1.25F, 3, 2, 9, 0.0F));
+
+		this.wing_1 = new ModelRenderer(this);
+		this.wing_1.setRotationPoint(-1.4142F, -1.9585F, 3.5504F);
+		this.husk_1.addChild(wing_1);
+		
+
+		this.wing_1_r1 = new ModelRenderer(this);
+		this.wing_1_r1.setRotationPoint(0.0F, 0.0F, 0.0F);
+		this.wing_1.addChild(wing_1_r1);
+		this.setRotationAngle(wing_1_r1, 0.1309F, -0.1134F, 0.0F);
+		this.wing_1_r1.cubeList.add(new ModelBox(wing_1_r1, 25, 14, -1.5F, 0.0F, -4.5F, 3, 0, 9, 0.0F));
+
+		this.husk_2 = new ModelRenderer(this);
+		this.husk_2.setRotationPoint(0.75F, 3.5938F, 10.375F);
+		this.main_body.addChild(husk_2);
+		
+
+		this.husk_2_r1 = new ModelRenderer(this);
+		this.husk_2_r1.setRotationPoint(-0.75F, -1.2188F, -0.375F);
+		this.husk_2.addChild(husk_2_r1);
+		this.setRotationAngle(husk_2_r1, 0.1309F, 0.3927F, 0.0F);
+		this.husk_2_r1.cubeList.add(new ModelBox(husk_2_r1, 0, 23, 0.0F, -3.5F, -1.25F, 3, 2, 9, 0.0F));
+
+		this.wing_2 = new ModelRenderer(this);
+		this.wing_2.setRotationPoint(0.6642F, -3.1772F, 3.1754F);
+		this.husk_2.addChild(wing_2);
+		
+
+		this.wing_2_r1 = new ModelRenderer(this);
+		this.wing_2_r1.setRotationPoint(0.0F, 0.0F, 0.0F);
+		this.wing_2.addChild(wing_2_r1);
+		this.setRotationAngle(wing_2_r1, 0.1309F, 0.1134F, 0.0F);
+		this.wing_2_r1.cubeList.add(new ModelBox(wing_2_r1, 12, 0, -1.5F, 0.0F, -4.5F, 3, 0, 9, 0.0F));
+	}
+
+	@Override
+	public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+		hercules.render(f5);
+	}
+
+	public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
+		modelRenderer.rotateAngleX = x;
+		modelRenderer.rotateAngleY = y;
+		modelRenderer.rotateAngleZ = z;
+	}
+}

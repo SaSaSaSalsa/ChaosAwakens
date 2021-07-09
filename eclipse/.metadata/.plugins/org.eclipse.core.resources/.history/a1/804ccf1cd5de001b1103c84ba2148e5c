@@ -1,0 +1,76 @@
+// Made with Blockbench 3.9.2
+// Exported for Minecraft version 1.7 - 1.12
+// Paste this class into your mod and generate all required imports
+
+
+public class ButterflyModel extends ModelBase {
+	private final ModelRenderer butterfly;
+	private final ModelRenderer body;
+	private final ModelRenderer body_r1;
+	private final ModelRenderer body_r2;
+	private final ModelRenderer rightwing;
+	private final ModelRenderer leftwing;
+
+	public ButterflyModel() {
+		textureWidth = 64;
+		textureHeight = 64;
+
+		butterfly = new ModelRenderer(this);
+		butterfly.setRotationPoint(0.0F, 24.0F, 0.0F);
+		
+
+		body = new ModelRenderer(this);
+		body.setRotationPoint(0.0F, 0.0F, 2.0F);
+		butterfly.addChild(body);
+		body.cubeList.add(new ModelBox(body, 0, 4, -0.5F, -1.5F, 1.0F, 1, 1, 3, 0.0F, false));
+		body.cubeList.add(new ModelBox(body, 0, 0, -1.0F, -2.0F, -9.0F, 2, 2, 10, 0.0F, false));
+
+		body_r1 = new ModelRenderer(this);
+		body_r1.setRotationPoint(0.0F, 0.0F, -3.0F);
+		body.addChild(body_r1);
+		setRotationAngle(body_r1, -0.48F, -0.3491F, 0.0F);
+		body_r1.cubeList.add(new ModelBox(body_r1, 0, 0, -2.0F, 1.0F, -9.0F, 1, 0, 4, 0.0F, false));
+
+		body_r2 = new ModelRenderer(this);
+		body_r2.setRotationPoint(0.0F, 0.0F, -3.0F);
+		body.addChild(body_r2);
+		setRotationAngle(body_r2, -0.48F, 0.3491F, 0.0F);
+		body_r2.cubeList.add(new ModelBox(body_r2, 2, 0, 1.0F, 1.0F, -9.0F, 1, 0, 4, 0.0F, false));
+
+		rightwing = new ModelRenderer(this);
+		rightwing.setRotationPoint(1.0F, -1.0F, -2.0F);
+		butterfly.addChild(rightwing);
+		rightwing.cubeList.add(new ModelBox(rightwing, 8, 22, 0.0F, -0.5F, -3.0F, 1, 1, 6, 0.0F, false));
+		rightwing.cubeList.add(new ModelBox(rightwing, 0, 31, 1.0F, -0.5F, -4.0F, 5, 1, 1, 0.0F, false));
+		rightwing.cubeList.add(new ModelBox(rightwing, 29, 23, 2.0F, -0.5F, -5.0F, 7, 1, 1, 0.0F, false));
+		rightwing.cubeList.add(new ModelBox(rightwing, 14, 0, 9.0F, -0.5F, -1.0F, 1, 1, 2, 0.0F, false));
+		rightwing.cubeList.add(new ModelBox(rightwing, 30, 13, 2.0F, -0.5F, 5.0F, 5, 1, 1, 0.0F, false));
+		rightwing.cubeList.add(new ModelBox(rightwing, 14, 0, 1.0F, -0.5F, -3.0F, 5, 1, 8, 0.0F, false));
+		rightwing.cubeList.add(new ModelBox(rightwing, 20, 16, 6.0F, -0.5F, -1.0F, 3, 1, 6, 0.0F, false));
+		rightwing.cubeList.add(new ModelBox(rightwing, 19, 27, 6.0F, -0.5F, -4.0F, 5, 1, 3, 0.0F, false));
+
+		leftwing = new ModelRenderer(this);
+		leftwing.setRotationPoint(-1.0F, -1.0F, -2.0F);
+		butterfly.addChild(leftwing);
+		setRotationAngle(leftwing, 0.0F, 0.0F, -3.1416F);
+		leftwing.cubeList.add(new ModelBox(leftwing, 0, 21, 0.0F, -0.5F, -3.0F, 1, 1, 6, 0.0F, false));
+		leftwing.cubeList.add(new ModelBox(leftwing, 30, 11, 1.0F, -0.5F, -4.0F, 5, 1, 1, 0.0F, false));
+		leftwing.cubeList.add(new ModelBox(leftwing, 0, 29, 2.0F, -0.5F, -5.0F, 7, 1, 1, 0.0F, false));
+		leftwing.cubeList.add(new ModelBox(leftwing, 0, 12, 9.0F, -0.5F, -1.0F, 1, 1, 2, 0.0F, false));
+		leftwing.cubeList.add(new ModelBox(leftwing, 30, 9, 2.0F, -0.5F, 5.0F, 5, 1, 1, 0.0F, false));
+		leftwing.cubeList.add(new ModelBox(leftwing, 0, 12, 1.0F, -0.5F, -3.0F, 5, 1, 8, 0.0F, false));
+		leftwing.cubeList.add(new ModelBox(leftwing, 18, 9, 6.0F, -0.5F, -1.0F, 3, 1, 6, 0.0F, false));
+		leftwing.cubeList.add(new ModelBox(leftwing, 16, 23, 6.0F, -0.5F, -4.0F, 5, 1, 3, 0.0F, false));
+	}
+
+	@Override
+	public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+		butterfly.render(f5);
+	}
+
+	public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
+		modelRenderer.rotateAngleX = x;
+		modelRenderer.rotateAngleY = y;
+		modelRenderer.rotateAngleZ = z;
+	}
+}

@@ -1,0 +1,40 @@
+  
+package Me.Akio.ChaosAwakens.Renderer;
+
+import org.lwjgl.opengl.GL11;
+
+import Me.Akio.ChaosAwakens.ChaosAwaken;
+import Me.Akio.ChaosAwakens.Entities.EntityBee;
+import Me.Akio.ChaosAwakens.Models.ModelBee;
+import cpw.mods.fml.client.registry.RenderingRegistry;
+import net.minecraft.client.model.ModelBase;
+import net.minecraft.client.model.ModelCow;
+import net.minecraft.client.renderer.entity.Render;
+import net.minecraft.client.renderer.entity.RenderLiving;
+import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.util.ResourceLocation;
+
+
+ public class RenderWasp
+/*    */   extends RenderLiving
+/*    */ {
+	 /*    */   protected ModelBee model;
+	 /* 15 */   private float scale = 1.0F;
+	 /* 16 */   private static final ResourceLocation texture = new ResourceLocation(ChaosAwaken.MODID + ":textures/entity/bee.png");
+	 /*    */   
+		public RenderWasp(ModelBase par1ModelBase, float par2) {
+			super(par1ModelBase, par2);
+		}
+		
+		protected ResourceLocation getEntityTexture(EntityBee entity) {
+			return texture;
+		}
+
+		@Override
+		protected ResourceLocation getEntityTexture(Entity entity) {
+			return this.getEntityTexture((EntityBee)entity);
+		}
+		 /*    */ }

@@ -1,0 +1,239 @@
+package Me.Akio.ChaosAwakens.Models;
+
+import Me.Akio.ChaosAwakens.Entities.EntityBee;
+import net.minecraft.client.model.ModelBase;
+import net.minecraft.client.model.ModelBox;
+import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.MathHelper;
+
+public class ModelBee extends ModelBase {
+	private final ModelRenderer Sting;
+	private final ModelRenderer Abdomnem1;
+	private final ModelRenderer Abdomnem2;
+	private final ModelRenderer Abdomnem3;
+	private final ModelRenderer Abdomnem4;
+	private final ModelRenderer Abdomnem5;
+	private final ModelRenderer MainBody;
+	private final ModelRenderer Neck;
+	private final ModelRenderer Head;
+	private final ModelRenderer WingRight;
+	private final ModelRenderer WingLeft;
+	private final ModelRenderer RA1;
+	private final ModelRenderer LA1;
+	private final ModelRenderer LA2;
+	private final ModelRenderer RA2;
+	private final ModelRenderer RA3;
+	private final ModelRenderer LA3;
+	private final ModelRenderer LeftPom;
+	private final ModelRenderer RightPom;
+	private final ModelRenderer LeftPincerExtra;
+	private final ModelRenderer LeftPincerMain;
+	private final ModelRenderer RightPincerMain;
+	private final ModelRenderer RightPincerExtra;
+	
+    private float wingspeed;
+
+	public ModelBee() {
+		wingspeed = 1.0F;
+		textureWidth = 256;
+		textureHeight = 256;
+
+		Sting = new ModelRenderer(this);
+		Sting.setRotationPoint(0.0F, 16.0F, 1.0F);
+		setRotationAngle(Sting, -0.7854F, 0.0F, 0.0F);
+		Sting.cubeList.add(new ModelBox(Sting, 68, 0, -1.0F, 0.0F, -1.0F, 2, 10, 2, 0.0F));
+
+		Abdomnem1 = new ModelRenderer(this);
+		Abdomnem1.setRotationPoint(0.0F, 9.0F, 2.0F);
+		setRotationAngle(Abdomnem1, -0.5236F, 0.0F, 0.0F);
+		Abdomnem1.cubeList.add(new ModelBox(Abdomnem1, 64, 12, -2.0F, 0.0F, 0.0F, 4, 8, 4, 0.0F));
+
+		Abdomnem2 = new ModelRenderer(this);
+		Abdomnem2.setRotationPoint(0.0F, 5.0F, 0.0F);
+		Abdomnem2.cubeList.add(new ModelBox(Abdomnem2, 60, 24, -3.0F, 0.0F, 0.0F, 6, 6, 6, 0.0F));
+
+		Abdomnem3 = new ModelRenderer(this);
+		Abdomnem3.setRotationPoint(0.0F, 1.0F, -2.0F);
+		setRotationAngle(Abdomnem3, 0.2618F, 0.0F, 0.0F);
+		Abdomnem3.cubeList.add(new ModelBox(Abdomnem3, 56, 36, -4.0F, 0.0F, 0.0F, 8, 7, 8, 0.0F));
+
+		Abdomnem4 = new ModelRenderer(this);
+		Abdomnem4.setRotationPoint(0.0F, -6.0F, -8.0F);
+		setRotationAngle(Abdomnem4, 0.5934F, 0.0F, 0.0F);
+		Abdomnem4.cubeList.add(new ModelBox(Abdomnem4, 53, 51, -5.0F, 0.0F, 0.0F, 10, 12, 10, 0.0F));
+
+		Abdomnem5 = new ModelRenderer(this);
+		Abdomnem5.setRotationPoint(0.0F, -6.0F, -15.0F);
+		setRotationAngle(Abdomnem5, 1.0996F, 0.0F, 0.0F);
+		Abdomnem5.cubeList.add(new ModelBox(Abdomnem5, 48, 73, -6.0F, 0.0F, 0.0F, 12, 12, 12, 0.0F));
+
+		MainBody = new ModelRenderer(this);
+		MainBody.setRotationPoint(0.0F, -12.0F, -24.0F);
+		setRotationAngle(MainBody, 1.4835F, 0.0F, 0.0F);
+		MainBody.cubeList.add(new ModelBox(MainBody, 48, 97, -6.0F, 0.0F, -6.0F, 12, 14, 12, 0.0F));
+
+		Neck = new ModelRenderer(this);
+		Neck.setRotationPoint(0.0F, -12.0F, -23.0F);
+		Neck.cubeList.add(new ModelBox(Neck, 55, 123, -4.0F, -4.0F, -8.0F, 8, 8, 8, 0.0F));
+
+		Head = new ModelRenderer(this);
+		Head.setRotationPoint(0.0F, -13.0F, -28.0F);
+		setRotationAngle(Head, 0.2618F, 0.0F, 0.0F);
+		Head.cubeList.add(new ModelBox(Head, 51, 139, -5.0F, -5.0F, -10.0F, 10, 10, 10, 0.0F));
+
+		WingRight = new ModelRenderer(this);
+		WingRight.setRotationPoint(-4.0F, -14.0F, -15.0F);
+		setRotationAngle(WingRight, -0.7854F, -0.5236F, 2.618F);
+		WingRight.cubeList.add(new ModelBox(WingRight, 0, 91, 0.0F, 0.0F, 0.0F, 0, 8, 24, 0.0F));
+
+		WingLeft = new ModelRenderer(this);
+		WingLeft.setRotationPoint(3.0F, -14.0F, -15.0F);
+		setRotationAngle(WingLeft, -0.7854F, 0.5236F, -2.618F);
+		WingLeft.cubeList.add(new ModelBox(WingLeft, 96, 91, 0.0F, 0.0F, 0.0F, 0, 8, 24, 0.0F));
+
+		RA1 = new ModelRenderer(this);
+		RA1.setRotationPoint(-3.0F, -17.0F, -31.0F);
+		setRotationAngle(RA1, 0.2618F, 0.5236F, 0.0F);
+		RA1.cubeList.add(new ModelBox(RA1, 47, 152, 0.0F, -6.0F, -1.0F, 1, 6, 1, 0.0F));
+
+		LA1 = new ModelRenderer(this);
+		LA1.setRotationPoint(2.0F, -17.0F, -32.0F);
+		setRotationAngle(LA1, 0.2618F, -0.5236F, 0.0F);
+		LA1.cubeList.add(new ModelBox(LA1, 91, 152, 0.0F, -6.0F, -1.0F, 1, 6, 1, 0.0F));
+
+		LA2 = new ModelRenderer(this);
+		LA2.setRotationPoint(2.0F, -17.0F, -32.0F);
+		setRotationAngle(LA2, 0.4363F, -0.6109F, 0.0F);
+		LA2.cubeList.add(new ModelBox(LA2, 91, 145, 0.0F, -11.0F, 0.0F, 1, 6, 1, 0.0F));
+
+		RA2 = new ModelRenderer(this);
+		RA2.setRotationPoint(-3.0F, -17.0F, -31.0F);
+		setRotationAngle(RA2, 0.4363F, 0.6109F, 0.0F);
+		RA2.cubeList.add(new ModelBox(RA2, 47, 145, 0.0F, -11.0F, 0.0F, 1, 6, 1, 0.0F));
+
+		RA3 = new ModelRenderer(this);
+		RA3.setRotationPoint(-3.0F, -17.0F, -31.0F);
+		setRotationAngle(RA3, 0.6109F, 0.6981F, 0.0F);
+		RA3.cubeList.add(new ModelBox(RA3, 47, 138, 0.0F, -16.0F, 2.0F, 1, 6, 1, 0.0F));
+
+		LA3 = new ModelRenderer(this);
+		LA3.setRotationPoint(2.0F, -17.0F, -32.0F);
+		setRotationAngle(LA3, 0.6109F, -0.6981F, 0.0F);
+		LA3.cubeList.add(new ModelBox(LA3, 91, 138, 0.0F, -16.0F, 2.0F, 1, 6, 1, 0.0F));
+
+		LeftPom = new ModelRenderer(this);
+		LeftPom.setRotationPoint(2.0F, -17.0F, -32.0F);
+		LeftPom.cubeList.add(new ModelBox(LeftPom, 89, 134, 4.0F, -16.0F, -6.0F, 2, 2, 2, 0.0F));
+
+		RightPom = new ModelRenderer(this);
+		RightPom.setRotationPoint(-3.0F, -17.0F, -31.0F);
+		RightPom.cubeList.add(new ModelBox(RightPom, 45, 134, -5.0F, -16.0F, -7.0F, 2, 2, 2, 0.0F));
+
+		LeftPincerExtra = new ModelRenderer(this);
+		LeftPincerExtra.setRotationPoint(2.0F, -8.0F, -36.0F);
+		setRotationAngle(LeftPincerExtra, 0.1745F, -0.1745F, 0.0F);
+		LeftPincerExtra.cubeList.add(new ModelBox(LeftPincerExtra, 71, 166, -2.0F, 0.0F, -6.0F, 2, 1, 2, 0.0F));
+
+		LeftPincerMain = new ModelRenderer(this);
+		LeftPincerMain.setRotationPoint(2.0F, -8.0F, -36.0F);
+		setRotationAngle(LeftPincerMain, 0.1745F, -0.1745F, 0.0F);
+		LeftPincerMain.cubeList.add(new ModelBox(LeftPincerMain, 71, 159, 0.0F, 0.0F, -6.0F, 2, 1, 6, 0.0F));
+
+		RightPincerMain = new ModelRenderer(this);
+		RightPincerMain.setRotationPoint(-4.0F, -8.0F, -36.0F);
+		setRotationAngle(RightPincerMain, 0.1745F, 0.1745F, 0.0F);
+		RightPincerMain.cubeList.add(new ModelBox(RightPincerMain, 55, 159, 0.0F, 0.0F, -6.0F, 2, 1, 6, 0.0F));
+
+		RightPincerExtra = new ModelRenderer(this);
+		RightPincerExtra.setRotationPoint(-4.0F, -8.0F, -36.0F);
+		setRotationAngle(RightPincerExtra, 0.1745F, 0.1745F, 0.0F);
+		RightPincerExtra.cubeList.add(new ModelBox(RightPincerExtra, 63, 166, 2.0F, 0.0F, -6.0F, 2, 1, 2, 0.0F));
+	}
+
+	@Override
+	public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+
+        float newangle = 0.0F;
+        EntityBee b = (EntityBee)entity;
+        super.render(entity, f, f1, f2, f3, f4, f5);
+        setRotationAngles(f, f1, f2, f3, f4, f5, entity);
+        newangle = MathHelper.cos(f2 * 1.1F * wingspeed) * 3.141593F * 0.3F;
+        WingLeft.rotateAngleZ = -1.745F - newangle;
+        WingRight.rotateAngleZ = 1.754F + newangle;
+        newangle = MathHelper.cos(f2 * 0.3F * wingspeed) * 3.141593F * 0.1F;
+        LeftPincerMain.rotateAngleY = -0.274F + newangle;
+        LeftPincerExtra.rotateAngleY = -0.274F + newangle;
+        RightPincerMain.rotateAngleY = 0.274F - newangle;
+        RightPincerExtra.rotateAngleY = 0.274F - newangle;
+        newangle = MathHelper.cos(f2 * 0.21F * wingspeed) * 3.141593F * 0.06F;
+        LA1.rotateAngleX = 0.261F + newangle;
+        LA2.rotateAngleX = 0.436F + newangle;
+        LA3.rotateAngleX = 0.611F + newangle;
+        LeftPom.rotateAngleX = newangle;
+        newangle = MathHelper.cos(f2 * 0.27F * wingspeed) * 3.141593F * 0.06F;
+        RA1.rotateAngleX = 0.261F + newangle;
+        RA2.rotateAngleX = 0.436F + newangle;
+        RA3.rotateAngleX = 0.611F + newangle;
+        RightPom.rotateAngleX = newangle;
+        newangle = MathHelper.cos(f2 * 0.31F * wingspeed) * 3.141593F * 0.06F;
+        LA1.rotateAngleZ = newangle;
+        LA2.rotateAngleZ = newangle;
+        LA3.rotateAngleZ = newangle;
+        LeftPom.rotateAngleZ = newangle;
+        newangle = MathHelper.cos(f2 * 0.37F * wingspeed) * 3.141593F * 0.06F;
+        RA1.rotateAngleZ = newangle;
+        RA2.rotateAngleZ = newangle;
+        RA3.rotateAngleZ = newangle;
+        RightPom.rotateAngleZ = newangle;
+        if(b.getAttackingEntity() != null)
+            newangle = MathHelper.cos(f2 * 0.021F * wingspeed) * 3.141593F * 0.023F;
+        else
+            newangle = MathHelper.cos(f2 * 0.11F * wingspeed) * 3.141593F * 0.055F;
+        Abdomnem5.rotateAngleX = 1.099F + newangle;
+        Abdomnem4.rotateAngleX = (Abdomnem5.rotateAngleX + newangle) - 0.35F;
+        Abdomnem4.rotationPointY = (float)((double)Abdomnem5.rotationPointY + Math.cos(Abdomnem5.rotateAngleX) * 10D);
+        Abdomnem4.rotationPointZ = (float)((double)Abdomnem5.rotationPointZ + Math.sin(Abdomnem5.rotateAngleX) * 10D);
+        Abdomnem3.rotateAngleX = (Abdomnem4.rotateAngleX + newangle) - 0.35F;
+        Abdomnem3.rotationPointY = (float)((double)Abdomnem4.rotationPointY + Math.cos(Abdomnem4.rotateAngleX) * 10D);
+        Abdomnem3.rotationPointZ = (float)((double)Abdomnem4.rotationPointZ + Math.sin(Abdomnem4.rotateAngleX) * 10D);
+        Abdomnem2.rotateAngleX = (Abdomnem3.rotateAngleX + newangle) - 0.35F;
+        Abdomnem2.rotationPointY = (float)((double)Abdomnem3.rotationPointY + Math.cos(Abdomnem3.rotateAngleX) * 6D);
+        Abdomnem2.rotationPointZ = (float)((double)Abdomnem3.rotationPointZ + Math.sin(Abdomnem3.rotateAngleX) * 6D);
+        Abdomnem1.rotateAngleX = (Abdomnem2.rotateAngleX + newangle) - 0.35F;
+        Abdomnem1.rotationPointY = (float)((double)Abdomnem2.rotationPointY + Math.cos(Abdomnem2.rotateAngleX) * 5D);
+        Abdomnem1.rotationPointZ = (float)((double)Abdomnem2.rotationPointZ + Math.sin(Abdomnem2.rotateAngleX) * 5D);
+        Sting.rotateAngleX = (Abdomnem1.rotateAngleX + newangle) - 0.35F;
+        Sting.rotationPointY = (float)((double)Abdomnem1.rotationPointY + Math.cos(Abdomnem1.rotateAngleX) * 7D);
+        Sting.rotationPointZ = 1.0F + (float)((double)Abdomnem1.rotationPointZ + Math.sin(Abdomnem1.rotateAngleX) * 7D);
+        Sting.render(f5);
+        Abdomnem1.render(f5);
+        Abdomnem2.render(f5);
+        Abdomnem3.render(f5);
+        Abdomnem4.render(f5);
+        Abdomnem5.render(f5);
+        MainBody.render(f5);
+        Neck.render(f5);
+        Head.render(f5);
+        WingRight.render(f5);
+        WingLeft.render(f5);
+        RA1.render(f5);
+        LA1.render(f5);
+        LA2.render(f5);
+        RA2.render(f5);
+        RA3.render(f5);
+        LA3.render(f5);
+        LeftPom.render(f5);
+        RightPom.render(f5);
+        LeftPincerExtra.render(f5);
+        LeftPincerMain.render(f5);
+        RightPincerMain.render(f5);
+        RightPincerExtra.render(f5);
+	}
+
+	public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
+		modelRenderer.rotateAngleX = x;
+		modelRenderer.rotateAngleY = y;
+		modelRenderer.rotateAngleZ = z;
+	}
+}

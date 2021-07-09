@@ -1,0 +1,41 @@
+  
+package Me.Akio.ChaosAwakens.Renderer;
+
+import Me.Akio.ChaosAwakens.ChaosAwaken;
+import Me.Akio.ChaosAwakens.Entities.EntityBee;
+import cpw.mods.fml.client.registry.RenderingRegistry;
+import net.minecraft.client.model.ModelBase;
+import net.minecraft.client.model.ModelCow;
+import net.minecraft.client.renderer.entity.Render;
+import net.minecraft.client.renderer.entity.RenderLiving;
+import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.ResourceLocation;
+
+
+@SideOnly(Side.CLIENT)
+public class RenderBee extends RenderLiving
+{
+	public static final ResourceLocation TEXTURE = new ResourceLocation(ChaosAwaken.MODID + ":textures/entity/bee.png");
+	private static ModelBase mainModel;
+	
+	public RenderBee(RenderManager manager) 
+	{
+		super(mainModel, NAME_TAG_RANGE);
+	}
+	
+	protected ResourceLocation getEntityTexture(EntityBee entity) 
+	{
+		return TEXTURE;
+	}
+	
+	public static void Render() {
+		RenderingRegistry.registerEntityRenderingHandler(EntityBee.class, RenderBee::new);
+	}
+
+	@Override
+	protected ResourceLocation getEntityTexture(Entity p_110775_1_) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

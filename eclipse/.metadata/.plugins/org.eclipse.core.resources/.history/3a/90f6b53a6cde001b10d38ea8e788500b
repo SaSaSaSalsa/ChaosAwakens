@@ -1,0 +1,26 @@
+package Me.Akio.ChaosAwakens.Renderer;
+
+import Me.Akio.ChaosAwakens.ChaosAwaken;
+import Me.Akio.ChaosAwakens.Entities.Beaver;
+import net.minecraft.client.model.ModelBase;
+import net.minecraft.client.renderer.entity.RenderLiving;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.ResourceLocation;
+
+public class RenderBeaver extends RenderLiving{
+	
+	private static final ResourceLocation mobTextures = new ResourceLocation(ChaosAwaken.MODID + ":textures/entity/Beavertexture.png");
+
+			public RenderBeaver(ModelBase par1ModelBase, float par2) {
+				super(par1ModelBase, par2);
+			}
+			
+			protected ResourceLocation getEntityTexture(Beaver entity) {
+				return mobTextures;
+			}
+
+			@Override
+			protected ResourceLocation getEntityTexture(Entity entity) {
+				return this.getEntityTexture((Beaver)entity);
+			}
+}

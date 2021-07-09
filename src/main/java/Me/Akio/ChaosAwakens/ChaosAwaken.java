@@ -2,11 +2,14 @@ package Me.Akio.ChaosAwakens;
 
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraft.client.model.ModelCow;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 
@@ -35,6 +38,12 @@ import Me.Akio.ChaosAwakens.Armors.Ultimate_Leggings;
 import Me.Akio.ChaosAwakens.CreativeTabs.ToolsTab;
 import Me.Akio.ChaosAwakens.Critters.Critter;
 import Me.Akio.ChaosAwakens.Critters.Critter_Creeper;
+import Me.Akio.ChaosAwakens.Entities.Beaver;
+import Me.Akio.ChaosAwakens.Entities.Enchanted_Cow;
+import Me.Akio.ChaosAwakens.Entities.Golden_Cow;
+import Me.Akio.ChaosAwakens.Entities.HerculesBeetle;
+import Me.Akio.ChaosAwakens.Entities.Red_Cow;
+import Me.Akio.ChaosAwakens.Entities.Wasp;
 import Me.Akio.ChaosAwakens.Foods.BLT;
 import Me.Akio.ChaosAwakens.Foods.Bacon;
 import Me.Akio.ChaosAwakens.Foods.Butter;
@@ -44,6 +53,13 @@ import Me.Akio.ChaosAwakens.Foods.Cherries;
 import Me.Akio.ChaosAwakens.Foods.Cooked_Bacon;
 import Me.Akio.ChaosAwakens.Foods.Cooked_Corndog;
 import Me.Akio.ChaosAwakens.Foods.Corn;
+import Me.Akio.ChaosAwakens.Models.HerculesBeetleModel;
+import Me.Akio.ChaosAwakens.Models.ModelBeaver;
+import Me.Akio.ChaosAwakens.Models.ModelWasp;
+import Me.Akio.ChaosAwakens.Renderer.RenderBeaver;
+import Me.Akio.ChaosAwakens.Renderer.RenderHerculesBeetle;
+import Me.Akio.ChaosAwakens.Renderer.RenderWasp;
+import Me.Akio.ChaosAwakens.Renderer.RendererRed_Cow;
 import Me.Akio.ChaosAwakens.Seeds.Apple_Seeds;
 import Me.Akio.ChaosAwakens.materials.Aluminum_Ingot;
 import Me.Akio.ChaosAwakens.materials.Amethyst;
@@ -63,6 +79,7 @@ import Me.Akio.ChaosAwakens.tools.Amethyst_Sword;
 import Me.Akio.ChaosAwakens.tools.Attitude_Adjuster;
 import Me.Akio.ChaosAwakens.tools.Emerald_Axe;
 import Me.Akio.ChaosAwakens.tools.Emerald_Pickaxe;
+import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -144,7 +161,13 @@ public class ChaosAwaken
     public static final Item.ToolMaterial AmethystShovel = EnumHelper.addToolMaterial("AmethystShovel", 3, 1300, 10F, 6F, 75);
     public static final Item.ToolMaterial AmethystSword = EnumHelper.addToolMaterial("AmethystSword", 3, 1300, 10F, 6F, 75);
     public static final Item.ToolMaterial AttitudeAdjuster = EnumHelper.addToolMaterial("AttitudeAdjuster", 3, 1300, 10F, 6F, 75);
+	public static final MobStats HerculesBeetle_stats = null;
+	public static final int DimensionID6 = 0;
     
+    public static int DimensionID4 = 0;
+    public static MobStats Wasp_Stats = null;
+    public static int PlayNicely = 0;
+    public static Random OreSpawnRand = new Random(151L);
     public static Item CrystalApple;
     public static Item uranium_nugget;
     public static Item uranium_ingot;
@@ -200,16 +223,60 @@ public class ChaosAwaken
 
     //EntitiesReg
     
+    public static int ButterflyID = 0;
+    public static int BeaverID = 0;
+    public static int WaspID = 0;
     public static int RedCowID = 0;
     public static int GoldCowID = 0;
     public static int EnchantedCowID = 0;
+    public static int BeetleID = 0;
     
     //SeedsReg
     public static Item apple_seeds;
     
+    //EggsReg
+    
+    public static Item waspegg;
+
         
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+    	
+    	RenderingRegistry.registerEntityRenderingHandler(Beaver.class, new RenderBeaver(new ModelBeaver(), 0));
+    	/* 4643 */     EntityRegistry.instance(); BeaverID = EntityRegistry.findGlobalUniqueEntityId();
+    	/* 4644 */     EntityRegistry.instance(); EntityRegistry.registerGlobalEntityID(Beaver.class, "Beaver", BeaverID);
+    	/* 4645 */     LanguageRegistry.instance().addStringLocalization("Beaver", "en_US", "Beaver");
+    	/* 4646 */     LanguageRegistry.instance().addStringLocalization("entity.Beaver.name", "en_US", "Beaver");
+    	/* 4647 */     EntityRegistry.instance(); EntityRegistry.registerModEntity(Beaver.class, "Beaver", BeaverID, this, 64, 1, false);
+    	
+    	RenderingRegistry.registerEntityRenderingHandler(Enchanted_Cow.class, new RendererRed_Cow(new ModelCow(), 0));
+    	/* 4643 */     EntityRegistry.instance(); EnchantedCowID = EntityRegistry.findGlobalUniqueEntityId();
+    	/* 4644 */     EntityRegistry.instance(); EntityRegistry.registerGlobalEntityID(Enchanted_Cow.class, "Enchanted_Cow", EnchantedCowID);
+    	/* 4645 */     LanguageRegistry.instance().addStringLocalization("Enchanted_Cow", "en_US", "Enchanted_Cow");
+    	/* 4646 */     LanguageRegistry.instance().addStringLocalization("entity.Enchanted_Cow.name", "en_US", "Enchanted_Cow");
+    	/* 4647 */     EntityRegistry.instance(); EntityRegistry.registerModEntity(Enchanted_Cow.class, "Enchanted_Cow", EnchantedCowID, this, 64, 1, false);
+    	
+    	RenderingRegistry.registerEntityRenderingHandler(Golden_Cow.class, new RendererRed_Cow(new ModelCow(), 0));
+    	/* 4643 */     EntityRegistry.instance(); GoldCowID = EntityRegistry.findGlobalUniqueEntityId();
+    	/* 4644 */     EntityRegistry.instance(); EntityRegistry.registerGlobalEntityID(Golden_Cow.class, "Golden_Cow", GoldCowID);
+    	/* 4645 */     LanguageRegistry.instance().addStringLocalization("Golden_Cow", "en_US", "Golden_Cow");
+    	/* 4646 */     LanguageRegistry.instance().addStringLocalization("entity.Golden_Cow.name", "en_US", "Golden_Cow");
+    	/* 4647 */     EntityRegistry.instance(); EntityRegistry.registerModEntity(Golden_Cow.class, "Golden_Cow", GoldCowID, this, 64, 1, false);
+    	
+    	RenderingRegistry.registerEntityRenderingHandler(Wasp.class, new RenderWasp(new ModelWasp(), 0));
+    	EntityRegistry.instance(); WaspID = EntityRegistry.findGlobalUniqueEntityId();
+    	EntityRegistry.instance(); EntityRegistry.registerGlobalEntityID(Wasp.class, "Wasp", WaspID);
+    	LanguageRegistry.instance().addStringLocalization("Wasp", "en_US", "Wasp");
+    	LanguageRegistry.instance().addStringLocalization("entity.Wasp.name", "en_US", "Wasp");
+    	EntityRegistry.instance(); EntityRegistry.registerModEntity(Wasp.class, "Wasp", WaspID, this, 64, 1, false);
+
+    	RenderingRegistry.registerEntityRenderingHandler(HerculesBeetle.class, new RenderHerculesBeetle(new HerculesBeetleModel(), 0));
+    	/* 4264 */     EntityRegistry.instance(); WaspID = EntityRegistry.findGlobalUniqueEntityId();
+    	/* 4265 */     EntityRegistry.instance(); EntityRegistry.registerGlobalEntityID(HerculesBeetle.class, "HerculesBeetle", BeetleID);
+    	/* 4266 */     LanguageRegistry.instance().addStringLocalization("HerculesBeetle", "en_US", "Hercules Beetle");
+    	/* 4267 */     LanguageRegistry.instance().addStringLocalization("entity.HerculesBeetle.name", "en_US", "HerculesBeetle");
+    	/* 4268 */     EntityRegistry.instance(); EntityRegistry.registerModEntity(HerculesBeetle.class, "HerculesBeetle", BeetleID, this, 64, 1, false);
+
 
     	queen_scale = new Queen_Scale().setUnlocalizedName("Queen_Scale").setTextureName("chaosawakens:queen_scale");
     	GameRegistry.registerItem(queen_scale, queen_scale.getUnlocalizedName().substring(5));
@@ -368,6 +435,9 @@ public class ChaosAwaken
     	apple_seeds = new Apple_Seeds(null, null).setUnlocalizedName("Apple_Seeds").setTextureName("chaosawakens:apple_seeds");
     	GameRegistry.registerItem(apple_seeds, apple_seeds.getUnlocalizedName().substring(5));
 
+    	//Eggs
+    	
+    	
     }
 
 
@@ -411,8 +481,18 @@ public class ChaosAwaken
     }
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {      
-     
+        Object config = null;
+		Object mobs = null;
+		Wasp_Stats = get_mobstats(config, mobs, "Bee", 80, 12, 5);
+
      	}
+
+
+
+	private MobStats get_mobstats(Object config, Object mobs, String string, int i, int j, int k) {
+		// TODO Auto-generated method stub
+		return null;
+	}
     
 
     }

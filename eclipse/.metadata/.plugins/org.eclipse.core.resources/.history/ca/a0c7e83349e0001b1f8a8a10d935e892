@@ -1,0 +1,8 @@
+package Me.Akio.ChaosAwakens.SpawnEggs;
+
+import net.minecraft.item.ItemMonsterPlacer;
+
+public class WaspEgg extends ItemMonsterPlacer{
+	
+	
+}

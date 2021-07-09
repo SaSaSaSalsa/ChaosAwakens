@@ -1,25 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="Tiger"/>
+		<item key="selection" value="can"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="Cat"/>
-			<item value="amethyst"/>
-			<item value="Amethyst"/>
-			<item value="royal"/>
-			<item value="blt"/>
-			<item value="Royal"/>
-			<item value="royal_guardian"/>
+			<item value="can"/>
+			<item value="walk"/>
 			<item value="*/"/>
 			<item value="/*"/>
-			<item value="orespawnmain"/>
+			<item value="/"/>
+			<item value="stats"/>
+			<item value="getAttacking"/>
+			<item value="scale"/>
+			<item value="size"/>
+			<item value="drop"/>
+			<item value="itemrand"/>
+			<item value="itemsrand"/>
+			<item value="rand"/>
+			<item value="item"/>
+			<item value="nicely"/>
 		</list>
 		<list key="replacehistory">
+			<item value=""/>
+			<item value="&#x09;&#x09;this.wing_2_r1 = new ModelRenderer(this);"/>
+			<item value="Enchanted"/>
+			<item value="Golden"/>
+			<item value="ChaosAwaken"/>
 			<item value="Tiger"/>
 			<item value="tigereye"/>
 			<item value="TigerEye"/>
@@ -28,8 +38,6 @@
 			<item value="queen"/>
 			<item value="Queen"/>
 			<item value="queen_scale"/>
-			<item value=""/>
-			<item value="ChaosAwaken"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

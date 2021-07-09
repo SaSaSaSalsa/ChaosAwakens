@@ -1,0 +1,111 @@
+---- Minecraft Crash Report ----
+// Surprise! Haha. Well, this is awkward.
+
+Time: 7/8/21 6:06 PM
+Description: Ticking entity
+
+java.lang.NullPointerException: Ticking entity
+	at Me.Akio.ChaosAwakens.Entities.Wasp.getTotalArmorValue(Wasp.java:292)
+	at net.minecraft.entity.EntityLivingBase.applyArmorCalculations(EntityLivingBase.java:1191)
+	at net.minecraft.entity.EntityLivingBase.damageEntity(EntityLivingBase.java:1263)
+	at net.minecraft.entity.EntityLivingBase.attackEntityFrom(EntityLivingBase.java:870)
+	at net.minecraft.entity.monster.EntityMob.attackEntityFrom(EntityMob.java:84)
+	at net.minecraft.entity.Entity.setOnFireFromLava(Entity.java:537)
+	at net.minecraft.entity.Entity.onEntityUpdate(Entity.java:504)
+	at net.minecraft.entity.EntityLivingBase.onEntityUpdate(EntityLivingBase.java:236)
+	at net.minecraft.entity.EntityLiving.onEntityUpdate(EntityLiving.java:192)
+	at net.minecraft.entity.Entity.onUpdate(Entity.java:386)
+	at net.minecraft.entity.EntityLivingBase.onUpdate(EntityLivingBase.java:1766)
+	at net.minecraft.entity.EntityLiving.onUpdate(EntityLiving.java:250)
+	at net.minecraft.entity.monster.EntityMob.onUpdate(EntityMob.java:47)
+	at Me.Akio.ChaosAwakens.Entities.Wasp.onUpdate(Wasp.java:173)
+	at net.minecraft.world.World.updateEntityWithOptionalForce(World.java:2298)
+	at net.minecraft.world.WorldServer.updateEntityWithOptionalForce(WorldServer.java:684)
+	at net.minecraft.world.World.updateEntity(World.java:2258)
+	at net.minecraft.world.World.updateEntities(World.java:2108)
+	at net.minecraft.world.WorldServer.updateEntities(WorldServer.java:515)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:703)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:614)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:118)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:485)
+	at net.minecraft.server.MinecraftServer$2.run(MinecraftServer.java:752)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at Me.Akio.ChaosAwakens.Entities.Wasp.getTotalArmorValue(Wasp.java:292)
+	at net.minecraft.entity.EntityLivingBase.applyArmorCalculations(EntityLivingBase.java:1191)
+	at net.minecraft.entity.EntityLivingBase.damageEntity(EntityLivingBase.java:1263)
+	at net.minecraft.entity.EntityLivingBase.attackEntityFrom(EntityLivingBase.java:870)
+	at net.minecraft.entity.monster.EntityMob.attackEntityFrom(EntityMob.java:84)
+	at net.minecraft.entity.Entity.setOnFireFromLava(Entity.java:537)
+	at net.minecraft.entity.Entity.onEntityUpdate(Entity.java:504)
+	at net.minecraft.entity.EntityLivingBase.onEntityUpdate(EntityLivingBase.java:236)
+	at net.minecraft.entity.EntityLiving.onEntityUpdate(EntityLiving.java:192)
+	at net.minecraft.entity.Entity.onUpdate(Entity.java:386)
+	at net.minecraft.entity.EntityLivingBase.onUpdate(EntityLivingBase.java:1766)
+	at net.minecraft.entity.EntityLiving.onUpdate(EntityLiving.java:250)
+	at net.minecraft.entity.monster.EntityMob.onUpdate(EntityMob.java:47)
+	at Me.Akio.ChaosAwakens.Entities.Wasp.onUpdate(Wasp.java:173)
+	at net.minecraft.world.World.updateEntityWithOptionalForce(World.java:2298)
+	at net.minecraft.world.WorldServer.updateEntityWithOptionalForce(WorldServer.java:684)
+	at net.minecraft.world.World.updateEntity(World.java:2258)
+
+-- Entity being ticked --
+Details:
+	Entity Type: Wasp (Me.Akio.ChaosAwakens.Entities.Wasp)
+	Entity ID: 259
+	Entity Name: Wasp
+	Entity's Exact location: -79.93, 63.55, 272.25
+	Entity's Block location: World: (-80,63,272), Chunk: (at 0,3,0 in -5,17; contains blocks -80,0,272 to -65,255,287), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Entity's Momentum: 0.12, -0.40, 0.00
+Stacktrace:
+	at net.minecraft.world.World.updateEntities(World.java:2108)
+	at net.minecraft.world.WorldServer.updateEntities(WorldServer.java:515)
+
+-- Affected level --
+Details:
+	Level name: New World
+	All players: 0 total; []
+	Chunk stats: ServerChunkCache: 625 Drop: 0
+	Level seed: -4341001895506505745
+	Level generator: ID 00 - default, ver 1. Features enabled: true
+	Level generator options: 
+	Level spawn location: World: (-60,64,244), Chunk: (at 4,4,4 in -4,15; contains blocks -64,0,240 to -49,255,255), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Level time: 8004 game time, 8004 day time
+	Level dimension: 0
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 126711 (now: false), thunder time: 29628 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:703)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:614)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:118)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:485)
+	at net.minecraft.server.MinecraftServer$2.run(MinecraftServer.java:752)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.10
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_202, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 10044672936 bytes (9579 MB) / 10398531584 bytes (9916 MB) up to 10398531584 bytes (9916 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx10000M -Xms10000M
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 0, tcache: 0, allocated: 12, tallocated: 94
+	FML: MCP v9.05 FML v7.10.99.99 Minecraft Forge 10.13.4.1614 4 mods loaded, 4 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	UCHIJAAAA	mcp{9.05} [Minecraft Coder Pack] (minecraft.jar) 
+	UCHIJAAAA	FML{7.10.99.99} [Forge Mod Loader] (forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar) 
+	UCHIJAAAA	Forge{10.13.4.1614} [Minecraft Forge] (forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar) 
+	UCHIJAAAA	ChaosAwakens{0.1} [Chaos Awakens] (bin) 
+	GL info: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	Player Count: 0 / 8; []
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'

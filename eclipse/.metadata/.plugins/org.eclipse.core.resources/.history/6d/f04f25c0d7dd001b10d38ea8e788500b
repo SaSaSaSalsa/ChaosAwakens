@@ -1,0 +1,5 @@
+package Me.Akio.ChaosAwakens.Models;
+
+public class MathHelper {
+
+}
